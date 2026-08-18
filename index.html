@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hermes Agent 現場導入教學手冊 ｜ 鶴仁專屬飯店營運特助</title>
-  <meta name="description" content="2026-08-19 鶴仁專屬 Hermes Agent 現場導入教學手冊：星級飯店營運特助、Obsidian 第二大腦、Google 雲端同步與四大客製化技能。">
+  <title>Hermes Agent 現場導入教學手冊 ｜ 鶴仁專屬飯店營運特助與第二大腦實戰</title>
+  <meta name="description" content="2026-08-19 鶴仁專屬 Hermes Agent 現場導入教學手冊：星級飯店營運特助、Obsidian 第二大腦、Google 雲端同步、ChatGPT 對話匯出轉檔與四大客製化技能。">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,7 @@
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
       --accent-rose: #f43f5e;
+      --accent-purple: #c084fc;
       
       --radius-sm: 8px;
       --radius-md: 12px;
@@ -93,7 +94,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(14, 20, 36, 0.85);
+      background: rgba(14, 20, 36, 0.88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border-subtle);
@@ -131,15 +132,15 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-secondary);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 500;
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: var(--radius-sm);
       text-decoration: none;
       transition: all 0.2s;
@@ -179,7 +180,7 @@
 
     /* Hero Section */
     .hero {
-      padding: 60px 0 40px;
+      padding: 50px 0 35px;
       position: relative;
     }
 
@@ -198,20 +199,20 @@
     }
 
     .hero-title {
-      font-size: 2.75rem;
+      font-size: 2.6rem;
       font-weight: 900;
-      line-height: 1.2;
+      line-height: 1.25;
       margin-bottom: 16px;
       color: #ffffff;
       letter-spacing: -0.03em;
     }
 
     .hero-subtitle {
-      font-size: 1.18rem;
+      font-size: 1.15rem;
       color: var(--text-secondary);
-      max-width: 820px;
+      max-width: 840px;
       line-height: 1.6;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     /* Event Card */
@@ -219,11 +220,11 @@
       background: linear-gradient(145deg, #111a2e 0%, #0d1527 100%);
       border: 1px solid var(--border-medium);
       border-radius: var(--radius-xl);
-      padding: 32px;
+      padding: 30px;
       box-shadow: var(--shadow-card);
       position: relative;
       overflow: hidden;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
     .event-card::before {
@@ -238,19 +239,19 @@
 
     .event-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-bottom: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+      margin-bottom: 24px;
     }
 
     .event-item {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
     }
 
     .event-label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-muted);
@@ -269,8 +270,8 @@
     .event-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      padding-top: 20px;
+      gap: 12px;
+      padding-top: 18px;
       border-top: 1px solid var(--border-subtle);
     }
 
@@ -280,8 +281,8 @@
       justify-content: center;
       gap: 8px;
       font-weight: 600;
-      font-size: 0.92rem;
-      padding: 10px 20px;
+      font-size: 0.9rem;
+      padding: 9px 18px;
       border-radius: var(--radius-md);
       cursor: pointer;
       border: none;
@@ -309,6 +310,16 @@
       transform: translateY(-2px);
     }
 
+    .btn-purple {
+      background: #7c3aed;
+      color: #ffffff;
+    }
+    .btn-purple:hover {
+      background: #6d28d9;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
     .btn-secondary {
       background: rgba(255, 255, 255, 0.07);
       color: var(--text-primary);
@@ -322,16 +333,16 @@
 
     /* Section Styles */
     section {
-      padding: 50px 0;
+      padding: 48px 0;
       border-top: 1px solid var(--border-subtle);
     }
 
     .section-header {
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .section-badge {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 700;
       color: var(--accent-cyan);
       text-transform: uppercase;
@@ -350,7 +361,7 @@
     .section-desc {
       font-size: 1rem;
       color: var(--text-secondary);
-      max-width: 780px;
+      max-width: 820px;
     }
 
     /* Card System */
@@ -370,7 +381,7 @@
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .grid-3 {
@@ -381,8 +392,8 @@
 
     .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
     }
 
     /* Architecture Cards */
@@ -404,7 +415,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       background: rgba(56, 189, 248, 0.12);
       color: var(--accent-cyan);
       border: 1px solid rgba(56, 189, 248, 0.25);
@@ -450,9 +461,9 @@
 
     .timeline-table th {
       background: rgba(255, 255, 255, 0.04);
-      padding: 16px 20px;
+      padding: 16px 18px;
       text-align: left;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: var(--text-muted);
@@ -460,9 +471,9 @@
     }
 
     .timeline-table td {
-      padding: 18px 20px;
+      padding: 16px 18px;
       border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       vertical-align: middle;
     }
 
@@ -475,78 +486,28 @@
     }
 
     .time-badge {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--accent-cyan);
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--accent-cyan);
       background: rgba(56, 189, 248, 0.1);
       padding: 4px 10px;
       border-radius: 6px;
+    }
+
+    .unit-tag {
       display: inline-block;
-    }
-
-    /* Code Blocks with Copy */
-    .code-container {
-      position: relative;
-      background: #090d16;
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      margin: 16px 0;
-    }
-
-    .code-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-      background: #0d1320;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .code-lang {
       font-weight: 600;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-    }
-
-    .copy-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: var(--text-secondary);
-      padding: 4px 10px;
+      color: #34d399;
+      font-size: 0.82rem;
+      background: rgba(16, 185, 129, 0.1);
+      padding: 3px 8px;
       border-radius: 4px;
-      font-size: 0.75rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: all 0.2s;
+      margin-right: 6px;
     }
 
-    .copy-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-    }
-
-    .copy-btn.copied {
-      background: #059669;
-      color: #ffffff;
-      border-color: #10b981;
-    }
-
-    pre code {
-      display: block;
-      padding: 16px;
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: #e2e8f0;
-      overflow-x: auto;
-    }
-
-    /* Steps cards */
+    /* Step System */
     .step-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
@@ -556,127 +517,192 @@
       margin-bottom: 20px;
     }
 
-    .step-number {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      font-size: 1.8rem;
-      font-weight: 900;
-      font-family: 'JetBrains Mono', monospace;
-      color: rgba(255, 255, 255, 0.07);
+    .step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      color: var(--text-inverse);
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-right: 12px;
     }
 
-    .step-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .step-header {
       display: flex;
       align-items: center;
-      gap: 10px;
+      margin-bottom: 14px;
     }
 
-    .step-title-badge {
-      background: var(--accent-cyan);
-      color: #000000;
+    .step-header h3 {
+      font-size: 1.18rem;
+      color: #ffffff;
+    }
+
+    /* Code Blocks with Copy */
+    .code-box {
+      position: relative;
+      background: #090d16;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 14px 0;
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .code-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-secondary);
       font-size: 0.75rem;
-      font-weight: 800;
-      padding: 2px 8px;
+      font-weight: 600;
+      padding: 4px 10px;
       border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
     }
 
-    /* Tab controls for skills */
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .copy-btn.copied {
+      background: rgba(16, 185, 129, 0.2);
+      border-color: #10b981;
+      color: #34d399;
+    }
+
+    pre.code-content {
+      padding: 16px;
+      overflow-x: auto;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Tabs Component */
     .tab-nav {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       border-bottom: 1px solid var(--border-subtle);
       padding-bottom: 12px;
-      margin-bottom: 24px;
-      overflow-x: auto;
+      margin-bottom: 20px;
     }
 
     .tab-btn {
-      background: rgba(255, 255, 255, 0.04);
+      background: transparent;
       border: 1px solid var(--border-subtle);
       color: var(--text-secondary);
-      padding: 10px 18px;
+      padding: 8px 16px;
       border-radius: var(--radius-md);
-      font-size: 0.92rem;
       font-weight: 600;
+      font-size: 0.88rem;
       cursor: pointer;
-      white-space: nowrap;
       transition: all 0.2s ease;
     }
 
     .tab-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
       color: var(--text-primary);
+      border-color: var(--border-medium);
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .tab-btn.active {
-      background: rgba(56, 189, 248, 0.15);
-      border-color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.12);
       color: var(--accent-cyan);
+      border-color: var(--border-accent);
     }
 
-    .tab-content {
+    .tab-pane {
       display: none;
     }
-    .tab-content.active {
+
+    .tab-pane.active {
       display: block;
       animation: fadeIn 0.3s ease;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(6px); }
+      from { opacity: 0; transform: translateY(4px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Interactive Checklist */
-    .checklist-card {
-      background: var(--bg-surface);
+    /* Workflow Cards */
+    .wf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .wf-card {
+      background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-xl);
-      padding: 32px;
+      border-radius: var(--radius-md);
+      padding: 16px;
     }
 
-    .progress-wrapper {
-      margin-bottom: 24px;
-    }
-
-    .progress-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    .progress-text {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-    }
-
-    .progress-pct {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: 700;
+    .wf-card h5 {
       color: var(--accent-cyan);
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .wf-card p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    /* Interactive Checklist */
+    .checklist-container {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 30px;
     }
 
     .progress-bar-bg {
       width: 100%;
       height: 10px;
       background: rgba(255, 255, 255, 0.08);
-      border-radius: 9999px;
+      border-radius: 999px;
       overflow: hidden;
+      margin: 16px 0 24px;
     }
 
     .progress-bar-fill {
       height: 100%;
       width: 0%;
-      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
-      border-radius: 9999px;
-      transition: width 0.4s ease;
+      background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-emerald) 100%);
+      transition: width 0.3s ease;
     }
 
     .check-item {
@@ -685,523 +711,601 @@
       gap: 14px;
       padding: 14px 16px;
       border-radius: var(--radius-md);
-      background: rgba(255, 255, 255, 0.02);
-      border: 1px solid transparent;
-      margin-bottom: 10px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-card);
+      margin-bottom: 12px;
       cursor: pointer;
       transition: all 0.2s ease;
       user-select: none;
     }
 
     .check-item:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: var(--border-subtle);
+      background: var(--bg-card-hover);
+      border-color: var(--border-medium);
     }
 
-    .check-item.completed {
-      background: rgba(16, 185, 129, 0.08);
-      border-color: rgba(16, 185, 129, 0.25);
+    .check-item.checked {
+      border-color: rgba(16, 185, 129, 0.4);
+      background: rgba(16, 185, 129, 0.05);
     }
 
-    .check-item input[type="checkbox"] {
-      width: 20px;
-      height: 20px;
+    .check-item.checked .check-title {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .custom-checkbox {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
       margin-top: 2px;
-      accent-color: var(--accent-emerald);
-      cursor: pointer;
+      transition: all 0.2s;
     }
 
-    .check-item-text {
-      flex: 1;
+    .check-item.checked .custom-checkbox {
+      background: #10b981;
+      border-color: #10b981;
+      color: #ffffff;
     }
 
-    .check-item-title {
+    .check-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .check-title {
       font-size: 0.98rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 2px;
     }
 
-    .check-item.completed .check-item-title {
-      color: #a7f3d0;
-      text-decoration: line-through;
-      opacity: 0.85;
-    }
-
-    .check-item-desc {
-      font-size: 0.85rem;
+    .check-sub {
+      font-size: 0.82rem;
       color: var(--text-secondary);
     }
 
-    /* Live Demo Output Preview Box */
-    .demo-box {
-      background: #090e18;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      border: 1px solid var(--accent-cyan);
+      color: #ffffff;
+      padding: 12px 20px;
       border-radius: var(--radius-md);
-      padding: 20px;
-      margin-top: 16px;
-    }
-
-    .demo-header {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      font-size: 0.9rem;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
     }
 
-    /* Table styles in content */
-    .styled-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 14px 0;
-      font-size: 0.88rem;
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
     }
 
-    .styled-table th {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 10px 12px;
-      text-align: left;
-      color: var(--text-secondary);
+    /* 3-Step Flow Box */
+    .flow-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 24px 0;
+    }
+
+    .flow-step-card {
+      background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    .styled-table td {
-      padding: 10px 12px;
-      border: 1px solid var(--border-subtle);
-      color: #e2e8f0;
+    .flow-step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      font-weight: 800;
+      font-size: 1rem;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    /* Callout alert */
+    .callout {
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      margin: 16px 0;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      display: flex;
+      gap: 12px;
+    }
+
+    .callout-info {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #bae6fd;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: #fde68a;
+    }
+
+    .callout-success {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #a7f3d0;
     }
 
     /* Footer */
     footer {
-      padding: 40px 0;
       border-top: 1px solid var(--border-subtle);
-      background: #060910;
-      color: var(--text-muted);
-      font-size: 0.85rem;
+      padding: 40px 0 60px;
       text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
     }
 
-    /* Mobile Bottom Quick Actions */
-    .mobile-bottom-bar {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(14, 20, 36, 0.95);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border-medium);
-      padding: 10px 16px;
-      z-index: 99;
-      justify-content: space-around;
-    }
-
-    .mobile-bar-btn {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      font-size: 0.72rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
-    .mobile-bar-btn.active, .mobile-bar-btn:hover {
-      color: var(--accent-cyan);
-      text-decoration: none;
-    }
-
-    @media (max-width: 868px) {
-      .hero-title { font-size: 2.1rem; }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .mobile-menu-btn { display: block; }
-      .mobile-bottom-bar { display: flex; }
-      .event-card { padding: 22px; }
-      section { padding: 40px 0; }
-      body { padding-bottom: 60px; }
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .grid-2, .grid-3, .flow-steps {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .nav-links.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: #0e1424;
+        border-bottom: 1px solid var(--border-subtle);
+        padding: 20px;
+        gap: 12px;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sticky Navbar -->
-  <nav class="navbar">
+  <!-- Navigation -->
+  <header class="navbar">
     <div class="container nav-inner">
-      <a href="#top" class="brand">
-        <span>⚡ Hermes Agent</span>
-        <span class="brand-badge">鶴仁導入現場</span>
+      <a href="#" class="brand">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-cyan);"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        <span>Hermes Agent 現場教學</span>
+        <span class="brand-badge">鶴仁專屬</span>
       </a>
-      <ul class="nav-links">
-        <li><a href="#event">現場資訊</a></li>
+
+      <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="選單">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
         <li><a href="#arch">架構方針</a></li>
         <li><a href="#schedule">現場流程</a></li>
-        <li><a href="#steps">安裝 6 步驟</a></li>
-        <li><a href="#soul">SOUL 設定</a></li>
-        <li><a href="#skills">4 大 Skills</a></li>
+        <li><a href="#extensions">瀏覽器擴充</a></li>
+        <li><a href="#install">安裝步驟</a></li>
+        <li><a href="#soul">SOUL設定</a></li>
+        <li><a href="#skills">4大Skills</a></li>
+        <li><a href="#chatgpt-export" style="color: #c084fc; font-weight: 700;">★ ChatGPT匯出</a></li>
         <li><a href="#checklist">驗收清單</a></li>
+        <li>
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%88%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%EF%BC%89&dates=20260819T110000Z%2F20260819T140000Z&details=%E9%80%99%E6%98%AF%E5%B9%AB%E5%8F%8B%E4%BA%BA%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%20%E7%9A%84%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%8C%E4%B8%BB%E9%A1%8C%E5%90%AB%E5%AE%89%E8%A3%9D%20Hermes%20Agent%E3%80%81Obsidian%20%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%85%A6%E3%80%81Google%20%E9%9B%B2%E7%AB%AF%E7%A3%81%E7%A2%9F%E5%90%8C%E6%AD%A5%E3%80%82&location=Block%20%26%20Cafe%EF%BC%8C%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%AA%E5%8E%9F%E8%B7%AF50%E8%99%9F2%E6%A8%93%EF%BC%88%E5%89%8D%E8%BA%AB%E7%94%BA%E5%92%96%E5%95%A1%EF%BC%89&ctz=Asia%2FTaipei" target="_blank" class="nav-action-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            加入日曆
+          </a>
+        </li>
       </ul>
-      <a href="#checklist" class="nav-action-btn">
-        <span>實作驗收</span>
-        <span id="nav-check-badge">0/10</span>
-      </a>
-      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="選單">☰</button>
     </div>
-  </nav>
+  </header>
 
-  <!-- Main Hero -->
-  <header class="hero" id="top">
-    <div class="container">
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
       <div class="hero-tag">
-        <span>● 2026-08-19（三）現場專用輔助頁面</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        現場教學實戰導入指南 ｜ 2026-08-19
       </div>
-      <h1 class="hero-title">Hermes Agent 現場導入教學手冊</h1>
-      <p class="hero-subtitle">
-        為星級飯店營運主管「陳鶴仁」量身打造的專屬 AI 數位特助與終身第二大腦。<br>
-        從本機安裝、Obsidian 雙向記憶庫、Google 雲端同步到四大營運技能，全面終結行政摩擦力。
-      </p>
+      <h1 class="hero-title">Hermes Agent 現場導入教學手冊<br><span style="background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">鶴仁專屬飯店營運特助 ＆ 第二大腦建置</span></h1>
+      <p class="hero-subtitle">告別傳統十幾個零散的 ChatGPT 對話視窗。將 AI Agent 深度融入星級飯店日常管理、跨部門會議速記、華邑籌備工程追蹤、晨晚營運指標自動推播，並將歷史對話與結構化知識無縫沈澱於 Obsidian 第二大腦。</p>
 
       <!-- Event Info Card -->
-      <div class="event-card" id="event">
+      <div class="event-card">
         <div class="event-grid">
           <div class="event-item">
-            <span class="event-label">📅 教學時間</span>
-            <span class="event-val">2026-08-19（三）19:00 – 22:00</span>
-            <span style="font-size: 0.8rem; color: var(--accent-emerald);">準時開課｜預計 3 小時</span>
+            <span class="event-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              時間
+            </span>
+            <span class="event-val">2026-08-19（三）19:00–22:00</span>
           </div>
+
           <div class="event-item">
-            <span class="event-label">📍 教學地點</span>
-            <span class="event-val">Block & Cafe</span>
-            <span style="font-size: 0.85rem; color: var(--text-secondary);">台北市太原路50號2樓（前身町咖啡）</span>
+            <span class="event-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              地點
+            </span>
+            <span class="event-val">Block & Cafe 太原路50號2樓</span>
           </div>
+
           <div class="event-item">
-            <span class="event-label">👥 參與成員</span>
-            <span class="event-val">鶴仁（學員）× 山姆大叔（助教）</span>
-            <span style="font-size: 0.8rem; color: var(--text-muted);">飯店營運管理職導入實戰</span>
+            <span class="event-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              對象與助教
+            </span>
+            <span class="event-val">陳鶴仁（學員）｜ 山姆大叔（助教）</span>
           </div>
+
           <div class="event-item">
-            <span class="event-label">📶 現場環境與設備</span>
-            <span class="event-val">Wi-Fi 備妥 ｜ 筆電＋充電器</span>
-            <span style="font-size: 0.8rem; color: var(--accent-amber);">需 Win10/11 管理員權限</span>
+            <span class="event-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+              現場網路
+            </span>
+            <span class="event-val">Wi-Fi 已確認具備</span>
           </div>
         </div>
 
         <div class="event-actions">
           <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%88%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%EF%BC%89&dates=20260819T110000Z%2F20260819T140000Z&details=%E9%80%99%E6%98%AF%E5%B9%AB%E5%8F%8B%E4%BA%BA%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%20%E7%9A%84%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%8C%E4%B8%BB%E9%A1%8C%E5%90%AB%E5%AE%89%E8%A3%9D%20Hermes%20Agent%E3%80%81Obsidian%20%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%85%A6%E3%80%81Google%20%E9%9B%B2%E7%AB%AF%E7%A3%81%E7%A2%9F%E5%90%8C%E6%AD%A5%E3%80%82&location=Block%20%26%20Cafe%EF%BC%8C%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%AA%E5%8E%9F%E8%B7%AF50%E8%99%9F2%E6%A8%93%EF%BC%88%E5%89%8D%E8%BA%AB%E7%94%BA%E5%92%96%E5%95%A1%EF%BC%89&ctz=Asia%2FTaipei" target="_blank" class="btn btn-primary">
-            📅 一鍵加入 Google 日曆 (提前2hr提醒)
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            一鍵加入 Google 日曆
           </a>
-          <a href="https://maps.google.com/?q=台北市大同區太原路50號2樓" target="_blank" class="btn btn-secondary">
-            🗺️ Google 地圖導航
+
+          <a href="https://maps.google.com/?q=台北市太原路50號2樓" target="_blank" class="btn btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            開啟 Google 地圖導航
           </a>
-          <a href="#steps" class="btn btn-emerald">
-            🚀 直接看安裝 6 步驟
+
+          <a href="#chatgpt-export" class="btn btn-purple">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            ★ ChatGPT 專案匯出教學
+          </a>
+
+          <a href="#checklist" class="btn btn-emerald">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+            現場驗收清單
           </a>
         </div>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <!-- Section: Architecture & Strategy -->
-  <section id="arch">
-    <div class="container">
+    <!-- Module 1: Architecture & Philosophy -->
+    <section id="arch">
       <div class="section-header">
-        <span class="section-badge">ARCHITECTURE & DESIGN</span>
-        <h2 class="section-title">架構方針：為什麼是 Hermes ＋ Obsidian？</h2>
-        <p class="section-desc">
-          打破傳統 ChatGPT「多對話串混亂、跨對話遺忘、無法自動化」的困境，建立三層解耦、永久可搬遷的個人數位特助體系。
-        </p>
+        <span class="section-badge">Module 1 ｜ 核心架構</span>
+        <h2 class="section-title">架構方針與解耦哲學</h2>
+        <p class="section-desc">山姆大叔為鶴仁量身規劃的「三層解耦第二大腦架構」。將運算執行（Agent）、知識沉澱（Obsidian）與雲端管線（Google Drive）完全分開，保有 100% 資料自主權與極限搬遷彈性。</p>
       </div>
 
-      <div class="grid-4">
+      <div class="grid-3">
         <div class="arch-card">
-          <div class="arch-icon">🧠</div>
-          <h4>1. 執行大腦 (Hermes)</h4>
-          <p>安裝於鶴仁本機筆電，支援隨時切換底層大模型（DeepSeek / Claude / OpenRouter），具備自主工具調用、長程記憶與 Cron 定時推播能力。</p>
+          <div class="arch-icon">💻</div>
+          <h4>1. 筆電 Hermes Agent</h4>
+          <p>執行大腦本體。安裝於鶴仁個人工作筆電，具備在地檔案讀寫、Terminal 控制、自定義 Skills 執行與 Cron 排程自動推播能力。</p>
           <div class="arch-tags">
-            <span class="tag-pill">本機運行</span>
-            <span class="tag-pill">模型自由切換</span>
-            <span class="tag-pill">主動排程</span>
+            <span class="tag-pill">在地執行</span>
+            <span class="tag-pill">CLI / Desktop</span>
+            <span class="tag-pill">模型路由切換</span>
           </div>
         </div>
 
         <div class="arch-card">
-          <div class="arch-icon">💎</div>
-          <h4>2. 記憶中樞 (Obsidian)</h4>
-          <p>純 Markdown 本地檔案結構，作為鶴仁的「數位第二大腦」。所有飯店日誌、華邑酒店籌備進度、會議紀錄皆為開放格式，永不被廠商綁架。</p>
+          <div class="arch-icon">🧠</div>
+          <h4>2. Obsidian 第二大腦</h4>
+          <p>知識庫與決策記憶樞紐。以純 Markdown 格式存放所有的會議行動矩陣、籌備日誌、晨晚營運報表，杜絕廠商綁定，資產隨時帶著走。</p>
           <div class="arch-tags">
             <span class="tag-pill">純 Markdown</span>
             <span class="tag-pill">雙向連結</span>
-            <span class="tag-pill">永不被鎖定</span>
+            <span class="tag-pill">資產可攜</span>
           </div>
         </div>
 
         <div class="arch-card">
           <div class="arch-icon">☁️</div>
-          <h4>3. 雲端同步 (Google Drive)</h4>
-          <p>Vault 資料夾直接掛載 Google 雲端磁碟。筆電修改、手機即時同步檢視，隨時隨地掌握現場工務與營運狀況。</p>
+          <h4>3. Google 雲端磁碟同步</h4>
+          <p>零成本自動同步管道。Vault 資料夾存於 Google Drive，筆電變更秒同步，手機端可隨時查看營運日誌，換電腦亦無縫無損接續。</p>
           <div class="arch-tags">
             <span class="tag-pill">自動備份</span>
-            <span class="tag-pill">手機隨身查閱</span>
-            <span class="tag-pill">無痛漫遊</span>
-          </div>
-        </div>
-
-        <div class="arch-card">
-          <div class="arch-icon">🔄</div>
-          <h4>4. 極致可搬遷性</h4>
-          <p>設定檔 (SOUL.md) 與技能 (Skills YAML) 完全模組化。未來即使換電腦、換雲端 VPS 或切換其他 Agent 引擎，全套設定無痛平移。</p>
-          <div class="arch-tags">
-            <span class="tag-pill">設定與資料分離</span>
-            <span class="tag-pill">標準化配置</span>
-            <span class="tag-pill">終身資產</span>
+            <span class="tag-pill">手機隨時查閱</span>
+            <span class="tag-pill">無痛換機</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Section: Schedule & Demo Script -->
-  <section id="schedule">
-    <div class="container">
+      <div class="callout callout-info" style="margin-top: 24px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <div>
+          <strong>隨時可搬遷性（Extreme Portability）：</strong>
+          所有設定、Prompt、Skills 皆為標準 YAML/Markdown 格式。若未來需要部署到雲端 VPS、Docker 容器，或更換為其他 Agent 架構，所有知識與 SOP 資產均可無縫平移。
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 2: Schedule & Flow -->
+    <section id="schedule">
       <div class="section-header">
-        <span class="section-badge">TIMELINE & LIVE DEMO</span>
-        <h2 class="section-title">3 小時現場教學流程與實作腳本</h2>
-        <p class="section-desc">緊湊實戰節奏，以手把手實作為核心，確保當晚 22:00 前完成所有環境建置與測試驗收。</p>
+        <span class="section-badge">Module 2 ｜ 現場節奏</span>
+        <h2 class="section-title">3 小時現場教學流程（6 段時間表）</h2>
+        <p class="section-desc">從安裝環境、配置第二大腦、注入角色技能、現場匯出 ChatGPT 專案歷史對話，到實際營運演練，一步步帶領鶴仁建立全套數位特助系統。</p>
       </div>
 
-      <div style="overflow-x: auto; margin-bottom: 36px;">
-        <table class="timeline-table">
-          <thead>
-            <tr>
-              <th style="width: 140px;">時間區段</th>
-              <th style="width: 120px;">單元名稱</th>
-              <th>核心教學內容與目標</th>
-              <th style="width: 150px;">對應素材</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="time-badge">19:00 – 19:15</span></td>
-              <td><strong>開場對焦</strong></td>
-              <td>說明 Hermes Agent 能幫鶴仁解決什麼痛點（對照他現有十幾個混亂 ChatGPT 對話串，展示特助模式與自主記憶）。</td>
-              <td><code>00_README.md</code></td>
-            </tr>
-            <tr>
-              <td><span class="time-badge">19:15 – 20:15</span></td>
-              <td><strong>實作 ①</strong></td>
-              <td><strong>筆電安裝 Hermes Agent</strong>＋Git Bash 環境＋API Key 配置與模型路由（<code>hermes doctor</code> 檢查確認）。</td>
-              <td><code>06_安裝步驟一頁紙</code></td>
-            </tr>
-            <tr>
-              <td><span class="time-badge">20:15 – 21:15</span></td>
-              <td><strong>實作 ②</strong></td>
-              <td><strong>Obsidian 第二大腦建置</strong>＋建立 Vault＋綁定 Google 雲端磁碟自動同步＋手機端同步檢視測試。</td>
-              <td><code>06_安裝步驟一頁紙 Step 6</code></td>
-            </tr>
-            <tr>
-              <td><span class="time-badge">21:15 – 22:00</span></td>
-              <td><strong>實作 ③ & 收尾</strong></td>
-              <td><strong>匯入 SOUL.md</strong>＋部署 4 個營運專屬 Skills＋示範 Cron 晨晚報推播＋全功能現場驗收與 Q&A。</td>
-              <td><code>01–05 素材檔</code></td>
-            </tr>
-            <tr>
-              <td><span class="time-badge" style="color: var(--text-muted); background: rgba(255,255,255,0.05);">會後延伸</span></td>
-              <td><strong>進階延伸</strong></td>
-              <td>手機端通訊軟體綁定（Telegram/Line）、雲端 VPS 常駐運行選項說明。</td>
-              <td>—</td>
-            </tr>
-          </tbody>
-        </table>
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th style="width: 140px;">時間</th>
+            <th style="width: 130px;">單元</th>
+            <th>內容與教學重點</th>
+            <th style="width: 190px;">對應素材 / 工具</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="time-badge">19:00–19:15</span></td>
+            <td><span class="unit-tag">開場</span></td>
+            <td>說明 Hermes Agent 能幫鶴仁做什麼（對照他現有十幾個 ChatGPT 對話串之痛點與架構轉型）</td>
+            <td><code>00_README.md</code></td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">19:15–20:00</span></td>
+            <td><span class="unit-tag">實作①</span></td>
+            <td>筆電環境檢查（git-bash）、安裝 Hermes Agent、設定 API Provider 與模型路由（OpenCode / DeepSeek）</td>
+            <td><code>06_安裝步驟一頁紙.md</code></td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">20:00–20:40</span></td>
+            <td><span class="unit-tag">實作②</span></td>
+            <td>Obsidian vault 建立 ＋ Google 雲端磁碟同步目錄 ＋ 瀏覽器擴充安裝（必裝 3 個 ＋ 選配 3 個）</td>
+            <td><code>06 Step 6</code> ＋ 擴充清單</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">20:40–21:15</span></td>
+            <td><span class="unit-tag">實作③</span></td>
+            <td>匯入 <code>01_SOUL.md</code> 角色設定 ＋ 4 個自定義 Skills ＋ 示範 Cron 定時任務設定（晨間早報、晚間結算）</td>
+            <td><code>01–05</code> 素材檔</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge" style="color: #c084fc; background: rgba(192, 132, 252, 0.15);">21:15–21:40</span></td>
+            <td><span class="unit-tag" style="background: rgba(192, 132, 252, 0.15); color: #c084fc;">實作④</span></td>
+            <td><strong>ChatGPT 對話匯出實戰：</strong>鶴仁瀏覽器貼 <code>chatgpt_export_all.js</code> → 下載 3 檔 → 放 Google Drive → Hermes 批次轉檔入 Obsidian</td>
+            <td><code>09_ChatGPT對話匯出教學.md</code> ＋ 轉檔腳本</td>
+          </tr>
+          <tr>
+            <td><span class="time-badge">21:40–22:00</span></td>
+            <td><span class="unit-tag">收尾</span></td>
+            <td>現場 Q&A、手機端綁定（Telegram/通訊端）說明、雲端 VPS 搬遷選項與日常維運技巧</td>
+            <td>驗收清單 / 現場確認</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Demo Script & Checklist Box -->
+      <div class="grid-2" style="margin-top: 24px;">
+        <div class="card">
+          <h4 style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--accent-cyan);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            現場示範腳本（實作③ ＆ ④）
+          </h4>
+          <ol style="padding-left: 20px; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+            <li><strong>驗證身份：</strong>貼上 <code>01_SOUL.md</code> → 問「你是誰」，驗證飯店營運特助設定生效。</li>
+            <li><strong>會議行動矩陣：</strong>貼上一段雜亂會議速記 → 觸發 <code>meeting_action_extractor</code> 產出表格。</li>
+            <li><strong>籌備工程追蹤：</strong>輸入「3樓客房天花板驗收沒過，廠商延後5天交場」→ 觸發 <code>hotel_milestone_tracker</code>。</li>
+            <li><strong>定時推播：</strong>設定 Cron 配置（04/05 JSON）→ 說明明早 08:00 會自動推播晨間簡報。</li>
+            <li><strong>對話匯出：</strong>執行 Console 腳本，1 分鐘產出 JSON 並透過 Hermes 轉為 Obsidian 專案筆記！</li>
+          </ol>
+        </div>
+
+        <div class="card">
+          <h4 style="margin-bottom: 12px; display: flex; align-items: center; gap: 8px; color: var(--accent-emerald);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            助教攜帶與確認清單（山姆大叔）
+          </h4>
+          <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;">
+            <li>☑️ 筆電 ＋ 充電器（鶴仁的筆電）</li>
+            <li>☑️ 本教學素材包（已放 Google 雲端硬碟，手機/筆電皆可存取）</li>
+            <li>☑️ LLM API Key（OpenCode / DeepSeek / OpenRouter 擇一）</li>
+            <li>☑️ 現場網路：Block & Cafe 有 Wi-Fi（已先期確認）</li>
+            <li>☑️ ChatGPT 匯出工具資料夾（4 支工具已全部打包備妥）</li>
+            <li>☑️ 瀏覽器擴充安裝清單（必裝 3 個 ＋ 選配 3 個）</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 3: Browser Extensions -->
+    <section id="extensions">
+      <div class="section-header">
+        <span class="section-badge">Module 3 ｜ 工具鏈擴充</span>
+        <h2 class="section-title">瀏覽器擴充安裝清單（實作②）</h2>
+        <p class="section-desc">為鶴仁的 Chrome / Edge 瀏覽器裝備必備的生產力插件，建立從「網頁瀏覽 ➔ AI 萃取 ➔ Obsidian 第二大腦」的完整閉環。</p>
       </div>
 
-      <!-- Live Demo Scenarios -->
-      <h3 style="font-size: 1.35rem; margin-bottom: 16px; color: #ffffff;">🎬 現場實作示範腳本（實作③ 四大檢驗點）</h3>
       <div class="grid-2">
-        <div class="card">
-          <div style="font-size: 0.82rem; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px;">DEMO 1：特助身份注入驗證</div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-            在對話框輸入：<code style="color: #ffffff;">「你是誰？你的主要職責是什麼？」</code>
-          </p>
-          <div class="demo-box">
-            <div class="demo-header">🎯 預期特助回應</div>
-            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
-              「我是星級飯店營運與新案籌備高階特助，專屬服務於鶴仁。我的首要任務是降低您的行政摩擦力，將會議紀錄、現場巡視與數據轉化為決策行動清單與公文呈報。」
-            </p>
+        <!-- Essential -->
+        <div class="card" style="border-left: 4px solid var(--accent-cyan);">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+            必裝清單（Essential 3 款）
+          </h4>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ffffff; font-size: 0.95rem;">1. Obsidian Web Clipper</strong>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">官方剪藏神器。一鍵將飯店產業分析、法規新知、競品報告抓取並去廣告存入 Obsidian Vault。</p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ffffff; font-size: 0.95rem;">2. Voyager</strong>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">視覺化網頁與 AI 探索輔助工具，大幅提升現場巡檢、資料收集與資訊標註的效率。</p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ffffff; font-size: 0.95rem;">3. Gemini 對話匯出擴充</strong>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">一鍵將 Google Gemini 深度研究對話導出為 Markdown 格式，與 ChatGPT 匯出形成雙引擎。</p>
+            </div>
           </div>
         </div>
 
-        <div class="card">
-          <div style="font-size: 0.82rem; color: var(--accent-emerald); font-weight: 700; margin-bottom: 6px;">DEMO 2：早會速記 → 跨部門行動矩陣</div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-            貼上一段口語早會：「前檯反應週末大團退房卡在發票，房務說3樓備品不足，工務下午要修電梯...」
-          </p>
-          <div class="demo-box">
-            <div class="demo-header">🎯 預期產出：行動矩陣表格</div>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">自動解析為：前檯 / 房務 / 工務標準部門，標註負責人、完成期限與優先級（P0/P1）。</p>
-          </div>
-        </div>
+        <!-- Optional -->
+        <div class="card" style="border-left: 4px solid var(--accent-indigo);">
+          <h4 style="color: var(--accent-indigo); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            選配清單（Power Tools 3 款）
+          </h4>
 
-        <div class="card">
-          <div style="font-size: 0.82rem; color: var(--accent-amber); font-weight: 700; margin-bottom: 6px;">DEMO 3：華邑酒店籌備關鍵路徑追蹤</div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-            輸入：「3樓客房天花板驗收沒過，廠商延後 5 天交場，地毯廠商也說卡關。」
-          </p>
-          <div class="demo-box">
-            <div class="demo-header">🎯 預期產出：延誤風險警示</div>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">自動比對關鍵路徑，輸出延誤警示，並主動列出「需鶴仁/總經理拍板的高管裁決事項」。</p>
-          </div>
-        </div>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ffffff; font-size: 0.95rem;">1. YouTube Dubbing（AI 雙語配音）</strong>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">國外頂級星級飯店管理、米其林餐飲培訓影片即時中英雙語配音播放，跨語言無障礙吸收。</p>
+            </div>
 
-        <div class="card">
-          <div style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 700; margin-bottom: 6px;">DEMO 4：定時自動化推播（Cron）</div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
-            配置每日 08:00 晨報與 22:30 晚報 Cron 任務，展示全自動無人化營運摘要。
-          </p>
-          <div class="demo-box">
-            <div class="demo-header">🎯 預期效果：營運全閉環</div>
-            <p style="font-size: 0.85rem; color: #cbd5e1;">早上主動準備決策視角（Top Priorities），晚上自動結算營收指標（Occ%/ADR）與客訴。</p>
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ffffff; font-size: 0.95rem;">2. YouTube to Notebook</strong>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">一鍵提取 YouTube 演講、課程之逐字稿與重點心智圖，秒轉 Obsidian 筆記。</p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); padding: 12px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+              <strong style="color: #ffffff; font-size: 0.95rem;">3. 螢幕錄影工具（Screen Recorder）</strong>
+              <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 4px;">快速錄製飯店 PMS 系統操作或工程瑕疵畫面，直接留存影像證據或傳給跨部門同仁。</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section: Installation Steps -->
-  <section id="steps">
-    <div class="container">
+    <!-- Module 4: Installation Guide -->
+    <section id="install">
       <div class="section-header">
-        <span class="section-badge">STEP-BY-STEP GUIDE</span>
+        <span class="section-badge">Module 4 ｜ 落地建置</span>
         <h2 class="section-title">Hermes Agent 安裝步驟一頁紙</h2>
-        <p class="section-desc">Windows 10/11 筆電專用，現場跟著 6 個步驟走，20–30 分鐘搞定全套環境。</p>
+        <p class="section-desc">針對 Windows 筆電環境的最佳化流程，約 20–30 分鐘即可完成從安裝、授權、角色載入到 Obsidian 雲端磁碟聯動。</p>
       </div>
 
       <!-- Step 1 -->
       <div class="step-card">
-        <div class="step-number">01</div>
-        <div class="step-title">
-          <span class="step-title-badge">STEP 1</span>
-          <span>安裝 Hermes Agent（在 Git Bash 內執行）</span>
+        <div class="step-header">
+          <span class="step-badge">1</span>
+          <h3>Step 1：安裝 Hermes Agent（於 git-bash 內執行）</h3>
         </div>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 10px;">
-          打開 <strong>Git Bash</strong>（若無請先下載安裝 <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>），貼上以下指令自動完成 uv、Python 虛擬環境與 Hermes 安裝：
-        </p>
-        <div class="code-container">
+        <p style="color: var(--text-secondary); font-size: 0.92rem;">安裝程式會自動處理 uv、Python、虛擬環境與全域啟動器。完成後請重新開啟 git-bash 視窗。</p>
+        <div class="code-box">
           <div class="code-header">
-            <span class="code-lang">Bash</span>
+            <span class="code-title">Bash / Git Bash</span>
             <button class="copy-btn" onclick="copyCode(this, 'curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash')">複製指令</button>
           </div>
-          <pre><code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</code></pre>
+          <pre class="code-content">curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</pre>
         </div>
-        <p style="font-size: 0.85rem; color: var(--accent-emerald);">💡 安裝完成後，請將 Git Bash 視窗關閉並重新打開。</p>
       </div>
 
       <!-- Step 2 -->
       <div class="step-card">
-        <div class="step-number">02</div>
-        <div class="step-title">
-          <span class="step-title-badge">STEP 2</span>
-          <span>初次設定與健康檢查</span>
+        <div class="step-header">
+          <span class="step-badge">2</span>
+          <h3>Step 2：初次設定與健康檢查</h3>
         </div>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 10px;">
-          執行 <code>hermes setup</code> 選擇 API 供應商並輸入金鑰，隨後進行對話測試：
-        </p>
-        <div class="code-container">
+        <p style="color: var(--text-secondary); font-size: 0.92rem;">透過引導介面配置 LLM 供應商（現場使用 OpenCode / DeepSeek Key），並進行診斷。</p>
+        <div class="code-box">
           <div class="code-header">
-            <span class="code-lang">Bash</span>
+            <span class="code-title">Bash / Command</span>
             <button class="copy-btn" onclick="copyCode(this, 'hermes setup
 hermes doctor
 hermes')">複製指令</button>
           </div>
-          <pre><code>hermes setup        # 設定模型與供應商（現場由山姆大叔提供 Key）
-hermes doctor       # 健康檢查（確認環境全綠燈 Pass）
-hermes              # 啟動互動對話介面</code></pre>
+          <pre class="code-content">hermes setup        # 設定模型與供應商（選 API provider 並貼 Key）
+hermes doctor       # 健康檢查（確認環境各項依賴正常）
+hermes              # 啟動互動對話模式</pre>
         </div>
       </div>
 
       <!-- Step 3 -->
       <div class="step-card">
-        <div class="step-number">03</div>
-        <div class="step-title">
-          <span class="step-title-badge">STEP 3</span>
-          <span>放入角色設定（SOUL.md）</span>
+        <div class="step-header">
+          <span class="step-badge">3</span>
+          <h3>Step 3：放入專屬角色設定（SOUL.md）</h3>
         </div>
-        <p style="font-size: 0.92rem; color: var(--text-secondary);">
-          把素材包內的 <code>01_SOUL.md</code> 內容複製並存入專案目錄下的 <code>AGENTS.md</code>（或 Hermes 提示詞設定區）。讓 Hermes 從第一次對話就具備星級飯店營運特助思維。
-        </p>
+        <p style="color: var(--text-secondary); font-size: 0.92rem;">把素材包內的 <code>01_SOUL.md</code> 內容存入專案目錄下的 <code>AGENTS.md</code>，讓 Hermes 預設以「星級飯店營運特助」身份運作。</p>
       </div>
 
       <!-- Step 4 -->
       <div class="step-card">
-        <div class="step-number">04</div>
-        <div class="step-title">
-          <span class="step-title-badge">STEP 4</span>
-          <span>放入 4 個客製化 Skills</span>
+        <div class="step-header">
+          <span class="step-badge">4</span>
+          <h3>Step 4：匯入 4 個客製化 Skills</h3>
         </div>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 10px;">
-          將素材包中的 <code>02</code> 至 <code>05</code> 檔案放入 Hermes 的技能資料夾：
-        </p>
-        <div class="code-container">
-          <div class="code-header">
-            <span class="code-lang">Path</span>
-            <button class="copy-btn" onclick="copyCode(this, '~/.hermes/skills/')">複製路徑</button>
-          </div>
-          <pre><code>~/.hermes/skills/</code></pre>
-        </div>
+        <p style="color: var(--text-secondary); font-size: 0.92rem;">將 <code>02</code>～<code>05</code> 的 skill 檔案複製到 Hermes 技能目錄（如 <code>~/.hermes/skills/</code>），Hermes 即具備會議拆解與籌備追蹤能力。</p>
       </div>
 
       <!-- Step 5 -->
       <div class="step-card">
-        <div class="step-number">05</div>
-        <div class="step-title">
-          <span class="step-title-badge">STEP 5</span>
-          <span>配置定時任務（Cron 晨報與晚報）</span>
+        <div class="step-header">
+          <span class="step-badge">5</span>
+          <h3>Step 5：配置定時排程（Cron Tasks）</h3>
         </div>
-        <p style="font-size: 0.92rem; color: var(--text-secondary);">
-          依據 <code>04_morning_briefing_tracker.md</code>（每日 08:00）與 <code>05_evening_settlement_tracker.md</code>（每日 22:30）的 JSON 設定排程，實現全自動推播。
-        </p>
+        <p style="color: var(--text-secondary); font-size: 0.92rem;">依 <code>04</code> 與 <code>05</code> 內附的 JSON 設定每日 08:00 晨報與 22:30 晚報自動推播。</p>
       </div>
 
       <!-- Step 6 -->
       <div class="step-card">
-        <div class="step-number">06</div>
-        <div class="step-title">
-          <span class="step-title-badge">STEP 6</span>
-          <span>建立 Obsidian 第二大腦 ＋ Google 雲端磁碟同步</span>
+        <div class="step-header">
+          <span class="step-badge">6</span>
+          <h3>Step 6：Obsidian 第二大腦 ＆ Google 雲端磁碟同步</h3>
         </div>
-        <div style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
-          <ol style="padding-left: 20px;">
-            <li>下載安裝 <a href="https://obsidian.md/download" target="_blank">Obsidian</a>。</li>
-            <li>建立新 Vault，路徑直接選擇放在 Google 雲端磁碟同步目錄中（例如 <code>G:/我的雲端硬碟/Obsidian/</code>）。</li>
-            <li>關閉自動保留設定，讓所有檔案以原生 Markdown 隨時隨地被手機 App 與其他程式讀取。</li>
-            <li>完成「本機處理 ➔ 雲端備份 ➔ 手機隨行」的完整閉環。</li>
-          </ol>
-        </div>
+        <ol style="padding-left: 20px; color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8;">
+          <li>下載安裝 Obsidian：<a href="https://obsidian.md/download" target="_blank">https://obsidian.md/download</a></li>
+          <li>在 Google 雲端硬碟同步資料夾內建立 Vault（例如：<code>G:/我的雲端硬碟/Obsidian/</code>）。</li>
+          <li>Obsidian 設定：直接以檔案資料夾同步方式運作，手機安裝 Obsidian App 開啟同一個雲端資料夾，即刻完成跨裝置連動。</li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section: SOUL.md -->
-  <section id="soul">
-    <div class="container">
+    <!-- Module 5: SOUL.md Full Persona -->
+    <section id="soul">
       <div class="section-header">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
-          <div>
-            <span class="section-badge">SYSTEM PROMPT & PERSONA</span>
-            <h2 class="section-title">01_SOUL.md 角色設定全文</h2>
-            <p class="section-desc">星級飯店營運與新案籌備高階特助專屬設定，匯入即生效。</p>
-          </div>
-          <button class="btn btn-primary" onclick="copySoulFull()">
-            📋 一鍵複製 SOUL 全文
-          </button>
-        </div>
+        <span class="section-badge">Module 5 ｜ 角色大腦</span>
+        <h2 class="section-title">鶴仁專屬角色設定（SOUL.md）</h2>
+        <p class="section-desc">定義 AI 的語境、思考層次與邊界。讓 Hermes 不只是一個聊天機器人，而是具備飯店業實務思維、跨部門協調能力的高階數位營運特助。</p>
       </div>
 
-      <div class="card" style="background: #090d16; padding: 28px;">
-        <div id="soul-full-text" style="white-space: pre-wrap; font-size: 0.92rem; line-height: 1.7; color: #e2e8f0; font-family: 'JetBrains Mono', monospace;">﻿# 核心身份 (Identity)
+      <div class="card">
+        <div class="code-box" style="margin-top: 0;">
+          <div class="code-header">
+            <span class="code-title">01_SOUL.md 完整設定檔</span>
+            <button class="copy-btn" onclick="copyCode(this, document.getElementById('soulText').innerText)">一鍵複製全文</button>
+          </div>
+          <pre class="code-content" id="soulText">﻿# 核心身份 (Identity)
 你是「星級飯店營運與新案籌備高階特助」，專屬服務於飯店管理者陳鶴仁（鶴仁）。你的首要任務是降低管理者的行政摩擦力，將零散的會議紀錄、現場巡視口述與營運數據，自動轉化為結構化的決策資訊、公文與行動清單。
 
 # 核心目標 (Core Objectives)
@@ -1226,45 +1330,63 @@ hermes              # 啟動互動對話介面</code></pre>
 # 輸出限制 (Output Constraints)
 - 全程使用繁體中文。
 - 拒絕輸出「希望這對您有幫助」、「總結來說」等廢話結尾。產出完畢即停止。
-</div>
-      </div>
-    </div>
-  </section>
+</pre>
+        </div>
 
-  <!-- Section: 4 Custom Skills -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-badge">CUSTOM SKILLS SUITE</span>
-        <h2 class="section-title">4 大飯店營運客製化技能</h2>
-        <p class="section-desc">專為鶴仁的飯店日常管理與新案籌備量身打造，涵蓋速記、專案追蹤與晨晚報定時推播。</p>
-      </div>
-
-      <!-- Tab Buttons -->
-      <div class="tab-nav">
-        <button class="tab-btn active" onclick="switchSkillTab(0)">02 会議行動提取 (meeting_action)</button>
-        <button class="tab-btn" onclick="switchSkillTab(1)">03 華邑里程碑追蹤 (hotel_milestone)</button>
-        <button class="tab-btn" onclick="switchSkillTab(2)">04 晨間營運摘要 (08:00 Cron)</button>
-        <button class="tab-btn" onclick="switchSkillTab(3)">05 晚間營運結算 (22:30 Cron)</button>
-      </div>
-
-      <!-- Skill 1 Content -->
-      <div class="tab-content active" id="skill-tab-0">
-        <div class="card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-            <h3 style="color: #ffffff;">📋 02_meeting_action_extractor.yaml</h3>
-            <span class="tag-pill" style="color: var(--accent-cyan); border-color: rgba(56,189,248,0.3);">觸發詞：會議記錄、早會整理、跨部門協調、交辦事項</span>
+        <div class="wf-grid" style="margin-top: 20px;">
+          <div class="wf-card">
+            <h5>主管回報模式</h5>
+            <p>背景與現況 ➔ 核心問題 ➔ 建議方案 (含 A/B 案對比) ➔ 預期效益與資源需求。</p>
           </div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
-            <strong>核心功能：</strong>將口述或零散的早會筆記，過濾閒聊後拆解為標準飯店 6 大部門（前檯 FO / 房務 HK / 餐飲 FB / 工務 ENG / 財務 FIN / 業務 Sales）行動矩陣表格與潛在風險警示。
-          </p>
+          <div class="wf-card">
+            <h5>會議管理模式</h5>
+            <p>決策摘要 ➔ 跨部門待辦清單 (事項/負責部門/壓線日期 Table) ➔ 潛在風險。</p>
+          </div>
+          <div class="wf-card">
+            <h5>籌備專案模式</h5>
+            <p>比對「華邑酒店」歷史節點 ➔ 進度更新 ➔ 延遲警示 ➔ 需高管裁決事項。</p>
+          </div>
+          <div class="wf-card">
+            <h5>數據決策模式</h5>
+            <p>核心洞察 ➔ 異常紅燈指標 (Occ% / ADR / RevPAR) ➔ 現場營運微調建議。</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="code-container">
-            <div class="code-header">
-              <span class="code-lang">YAML Config</span>
-              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-1').innerText)">複製 YAML</button>
+    <!-- Module 6: 4 Custom Skills & Cron -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-badge">Module 6 ｜ 專屬技能</span>
+        <h2 class="section-title">4 大專屬 Skills 規格與定時排程</h2>
+        <p class="section-desc">包含即時觸發的會議解析、工程籌備追蹤，以及早晚自動推播的定時閉環機制。</p>
+      </div>
+
+      <!-- Tabs for Skills -->
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchSkillTab(0)">Skill 1: 會議速記 ➔ 行動矩陣</button>
+        <button class="tab-btn" onclick="switchSkillTab(1)">Skill 2: 華邑酒店籌備追蹤</button>
+        <button class="tab-btn" onclick="switchSkillTab(2)">Skill 3: 晨間營運摘要 (08:00)</button>
+        <button class="tab-btn" onclick="switchSkillTab(3)">Skill 4: 晚間營運結算 (22:30)</button>
+      </div>
+
+      <!-- Tab 0: Meeting Action Extractor -->
+      <div class="tab-pane active" id="skillPane0">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px;">
+            <div>
+              <h3 style="color: var(--accent-cyan);">02_meeting_action_extractor.yaml</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">將口語化或零散的飯店會議筆記，結構化解析為決策摘要、跨部門行動矩陣（Table）及高風險警示。</p>
             </div>
-            <pre><code id="code-skill-1">﻿name: meeting_action_extractor
+            <span class="tag-pill" style="color: var(--accent-emerald); border-color: rgba(16,185,129,0.3);">即時觸發</span>
+          </div>
+
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">YAML 規格定義</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('skill1Text').innerText)">複製 YAML</button>
+            </div>
+            <pre class="code-content" id="skill1Text">﻿name: meeting_action_extractor
 description: 將口語化或零散的飯店會議筆記，結構化解析為決策摘要、跨部門行動矩陣（Table）及高風險警示。
 triggers:
   - 會議記錄
@@ -1294,28 +1416,28 @@ output_template: |
 
   **⚠️ 潛在風險與待確認事項**
   * [列出資訊不明確或跨部門卡點項目]
-</code></pre>
+</pre>
           </div>
         </div>
       </div>
 
-      <!-- Skill 2 Content -->
-      <div class="tab-content" id="skill-tab-1">
+      <!-- Tab 1: Hotel Milestone Tracker -->
+      <div class="tab-pane" id="skillPane1">
         <div class="card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-            <h3 style="color: #ffffff;">🏨 03_hotel_milestone_tracker.yaml</h3>
-            <span class="tag-pill" style="color: var(--accent-emerald); border-color: rgba(16,185,129,0.3);">觸發詞：籌備進度、華邑酒店進度、工程驗收、採購追蹤</span>
-          </div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
-            <strong>核心功能：</strong>追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點。比對關鍵路徑（Critical Path），主動警示試營運延誤風險，並生成「需高管裁決事項」。
-          </p>
-
-          <div class="code-container">
-            <div class="code-header">
-              <span class="code-lang">YAML Config</span>
-              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-2').innerText)">複製 YAML</button>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px;">
+            <div>
+              <h3 style="color: var(--accent-cyan);">03_hotel_milestone_tracker.yaml</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點，輸出進度報告並警示延誤風險。</p>
             </div>
-            <pre><code id="code-skill-2">﻿name: hotel_milestone_tracker
+            <span class="tag-pill" style="color: var(--accent-emerald); border-color: rgba(16,185,129,0.3);">即時觸發</span>
+          </div>
+
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">YAML 規格定義</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('skill2Text').innerText)">複製 YAML</button>
+            </div>
+            <pre class="code-content" id="skill2Text">﻿name: hotel_milestone_tracker
 description: 追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點，輸出進度報告並警示延誤風險。
 triggers:
   - 籌備進度
@@ -1349,28 +1471,28 @@ output_template: |
 
   **🚨 需高管裁決事項 (Action Required)**
   * [列出需鶴仁或總經理拍板的決策點]
-</code></pre>
+</pre>
           </div>
         </div>
       </div>
 
-      <!-- Skill 3 Content -->
-      <div class="tab-content" id="skill-tab-2">
+      <!-- Tab 2: Morning Briefing Tracker -->
+      <div class="tab-pane" id="skillPane2">
         <div class="card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-            <h3 style="color: #ffffff;">☀️ 04_morning_briefing_tracker.md（晨間營運摘要）</h3>
-            <span class="tag-pill" style="color: var(--accent-amber); border-color: rgba(245,158,11,0.3);">每日 08:00 Cron 自動推播</span>
-          </div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
-            <strong>核心功能：</strong>每日早上 08:00 主動整合「昨日營運數據（Occ%/ADR/RevPAR）」＋「今日到期與逾期行動清單」＋「華邑籌備當週驗收節點」＋「早會需高管拍板事項」。
-          </p>
-
-          <div class="code-container">
-            <div class="code-header">
-              <span class="code-lang">Markdown & Cron JSON</span>
-              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-3').innerText)">複製內容</button>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px;">
+            <div>
+              <h3 style="color: var(--accent-amber);">04_morning_briefing_tracker.md（晨間營運摘要）</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">每日 08:00 定時觸發。整合跨部門逾期待辦、華邑籌備當週驗收節點與昨日營運數據，提供早會決策清單。</p>
             </div>
-            <pre><code id="code-skill-3">﻿# 定時 Skill：晨間營運摘要（morning-briefing-tracker）
+            <span class="tag-pill" style="color: var(--accent-amber); border-color: rgba(245,158,11,0.3);">Cron 定時 08:00</span>
+          </div>
+
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">Markdown ＆ Cron JSON 配置</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('skill3Text').innerText)">複製配置</button>
+            </div>
+            <pre class="code-content" id="skill3Text">﻿# 定時 Skill：晨間營運摘要（morning-briefing-tracker）
 
 - **觸發**：Cron 每日 08:00｜手動關鍵詞：`晨報、今日早報、晨會準備、早安簡報`
 - **聚合**：未結案行動清單（今日到期/逾期）＋華邑籌備當週驗收節點＋昨日營運數據（Occ%/ADR/RevPAR）＋早會需高管確認事項
@@ -1389,28 +1511,28 @@ output_template: |
 - **輸出模板**：☀️ 晨間營運與籌備簡報 → 🔥 Top Priorities（P0 卡點 1-2 項）→ 🏨 華邑關鍵節點＋風險警示 → 📋 跨部門待追蹤清單（表格）→ 💡 早會提示
 
 ---
-</code></pre>
+</pre>
           </div>
         </div>
       </div>
 
-      <!-- Skill 4 Content -->
-      <div class="tab-content" id="skill-tab-3">
+      <!-- Tab 3: Evening Settlement Tracker -->
+      <div class="tab-pane" id="skillPane3">
         <div class="card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
-            <h3 style="color: #ffffff;">🌙 05_evening_settlement_tracker.md（晚間營運結算）</h3>
-            <span class="tag-pill" style="color: var(--accent-indigo); border-color: rgba(129,140,248,0.3);">每日 22:30 Cron 自動推播</span>
-          </div>
-          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
-            <strong>核心功能：</strong>四維度營運結算：當日核心營收（住房率/ADR/餐飲）＋現場異常與重大客訴＋夜間交班巡檢（VIP/MOD事項）＋明日營運預警（大團進出/人力調配）。
-          </p>
-
-          <div class="code-container">
-            <div class="code-header">
-              <span class="code-lang">Markdown & Cron JSON</span>
-              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-4').innerText)">複製內容</button>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px;">
+            <div>
+              <h3 style="color: var(--accent-indigo);">05_evening_settlement_tracker.md（晚間營運結算）</h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">每日 22:30 定時觸發（夜審前）。聚合當日營收（Occ%/ADR/RevPAR）、重大客訴、夜間交班要點與明日預警。</p>
             </div>
-            <pre><code id="code-skill-4">﻿# 定時 Skill：晚間營運結算（evening-settlement-tracker）
+            <span class="tag-pill" style="color: var(--accent-indigo); border-color: rgba(129,140,248,0.3);">Cron 定時 22:30</span>
+          </div>
+
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">Markdown ＆ Cron JSON 配置</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('skill4Text').innerText)">複製配置</button>
+            </div>
+            <pre class="code-content" id="skill4Text">﻿# 定時 Skill：晚間營運結算（evening-settlement-tracker）
 
 - **觸發**：Cron 每日 22:30 或 23:00（夜審前／值班經理交班）｜手動關鍵詞：`晚報、今日營收、夜班交接、晚間結算`
 - **聚合四維度**：當日核心營收（Occ%/ADR/RevPAR＋餐飲宴會）＋現場異常與重大客訴（免單/升等補償、設施故障）＋夜間交班巡檢（遲到 VIP、MOD 注意事項）＋明日營運預警（預估住房率、大團進出、人力佈署）
@@ -1431,355 +1553,1068 @@ output_template: |
 &gt; 晨間＋晚間形成完整閉環：早上主動準備決策視角，晚間結算當日績效與風險，搭配會議速記與籌備追蹤技能全面解放行政負擔。
 
 ---
-</code></pre>
+</pre>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Section: Interactive Acceptance Checklist -->
-  <section id="checklist">
-    <div class="container">
+    <!-- Module 7: ChatGPT Export Tutorial (NEW SECTION) -->
+    <section id="chatgpt-export" style="background: linear-gradient(180deg, rgba(124, 58, 237, 0.05) 0%, transparent 100%); border-radius: var(--radius-xl); padding: 40px 24px; margin: 30px 0; border: 1px solid rgba(192, 132, 252, 0.2);">
       <div class="section-header">
-        <span class="section-badge">INTERACTIVE CHECKLIST</span>
-        <h2 class="section-title">現場實作驗收清單</h2>
-        <p class="section-desc">現場邊做邊打勾，進度會自動儲存於瀏覽器，全部打勾代表導入大功告成！</p>
+        <span class="section-badge" style="color: #c084fc;">Module 7 ｜ 重點新功能</span>
+        <h2 class="section-title" style="display: flex; align-items: center; gap: 10px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          ChatGPT 專案對話匯出與 Hermes 轉檔入庫教學
+        </h2>
+        <p class="section-desc">把鶴仁過去累積在 ChatGPT 的數十個專案對話（如華邑酒店籌備、數據分析等）完整匯出，保留專案分組標籤，並由 Hermes 自動轉為 Obsidian 結構化筆記，建立真正的知識資產第二大腦！</p>
       </div>
 
-      <div class="checklist-card">
-        <div class="progress-wrapper">
-          <div class="progress-header">
-            <span class="progress-text">現場完成進度</span>
-            <span class="progress-pct" id="progress-pct">0%</span>
+      <!-- 3-Step Flow Cards -->
+      <div class="flow-steps">
+        <div class="flow-step-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span class="flow-step-num">①</span>
+            <span class="tag-pill" style="color: #c084fc; border-color: rgba(192,132,252,0.3);">1 分鐘操作</span>
           </div>
-          <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="progress-bar-fill"></div>
-          </div>
-        </div>
-
-        <div id="checklist-items">
-          <div class="check-item" onclick="toggleCheck(0)">
-            <input type="checkbox" id="chk-0" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">1. Git Bash 與 Hermes Agent 順利安裝</div>
-              <div class="check-item-desc">執行 curl 腳本無報錯，環境變數與啟動路徑配置正確。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(1)">
-            <input type="checkbox" id="chk-1" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">2. API Key 配置與 <code>hermes doctor</code> 全綠燈</div>
-              <div class="check-item-desc">金鑰成功載入，診斷指令顯示各項連線正常。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(2)">
-            <input type="checkbox" id="chk-2" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">3. <code>hermes</code> 互動介面首次對話成功</div>
-              <div class="check-item-desc">能正常輸入 prompt 並流暢接收 AI 回應。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(3)">
-            <input type="checkbox" id="chk-3" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">4. SOUL.md 角色設定生效</div>
-              <div class="check-item-desc">問「你是誰？」時，AI 正確回應「星級飯店營運與新案籌備特助」身份。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(4)">
-            <input type="checkbox" id="chk-4" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">5. 技能 ① 會議行動矩陣提取測試成功</div>
-              <div class="check-item-desc">輸入雜亂會議口述，成功產出 6 大部門行動表格。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(5)">
-            <input type="checkbox" id="chk-5" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">6. 技能 ② 華邑酒店籌備里程碑測試成功</div>
-              <div class="check-item-desc">輸入工務延誤資訊，成功警示關鍵路徑與高管裁決事項。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(6)">
-            <input type="checkbox" id="chk-6" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">7. 晨報 (08:00) 與晚報 (22:30) Cron 設定完成</div>
-              <div class="check-item-desc">排程任務註冊成功，確認能定時自動觸發。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(7)">
-            <input type="checkbox" id="chk-7" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">8. Obsidian Vault 建立並同步至 Google 雲端硬碟</div>
-              <div class="check-item-desc">筆記庫儲存於 Google Drive 目錄，本機自動雙向同步。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(8)">
-            <input type="checkbox" id="chk-8" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">9. 手機端 Google Drive / Obsidian 檢視測試</div>
-              <div class="check-item-desc">鶴仁在手機上能即時讀取剛才在筆電上生成的筆記。</div>
-            </div>
-          </div>
-
-          <div class="check-item" onclick="toggleCheck(9)">
-            <input type="checkbox" id="chk-9" onchange="updateProgress()">
-            <div class="check-item-text">
-              <div class="check-item-title">10. 掌握解耦概念與搬遷備份原理</div>
-              <div class="check-item-desc">理解「資料存 Markdown、大腦隨時可換」的架構優勢。</div>
-            </div>
+          <h4 style="color: #ffffff;">鶴仁瀏覽器一鍵匯出</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            1. 登入 <a href="https://chatgpt.com" target="_blank">chatgpt.com</a><br>
+            2. 按 <code>F12</code> ➔ 切換至 <strong>Console</strong> 分頁<br>
+            3. 複製貼上 <code>chatgpt_export_all.js</code> ➔ 按 Enter<br>
+            4. 跑完後自動下載 3 個檔案（JSON/Index/MD）。
+          </p>
+          <div class="callout callout-warning" style="margin-top: auto; padding: 10px; font-size: 0.78rem;">
+            ⚠️ 匯出進行中請勿重新整理頁面！若免費帳號限流可改用專案保守模式腳本。
           </div>
         </div>
 
-        <div style="display: flex; gap: 12px; margin-top: 20px;">
-          <button class="btn btn-secondary" onclick="resetChecklist()" style="font-size: 0.85rem;">🔄 重設勾選狀態</button>
-          <button class="btn btn-emerald" onclick="checkAllList()" style="font-size: 0.85rem;">✅ 全部勾選（完成）</button>
+        <div class="flow-step-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span class="flow-step-num">②</span>
+            <span class="tag-pill" style="color: var(--accent-cyan); border-color: rgba(56,189,248,0.3);">雲端存放</span>
+          </div>
+          <h4 style="color: #ffffff;">放進 Google Drive</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            將下載的 <code>chatgpt_all_conversations.json</code> 等檔案放進 Google 雲端硬碟共享資料夾（或告訴 Hermes 路徑）。
+          </p>
+          <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: var(--radius-sm); font-size: 0.8rem; color: var(--text-muted); margin-top: auto;">
+            💡 檔案放於雲端磁碟，Hermes 即可直接以本機路徑存取並讀取。
+          </div>
+        </div>
+
+        <div class="flow-step-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span class="flow-step-num">③</span>
+            <span class="tag-pill" style="color: var(--accent-emerald); border-color: rgba(16,185,129,0.3);">自動轉檔</span>
+          </div>
+          <h4 style="color: #ffffff;">Hermes 批次轉檔入庫</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            Hermes 執行 <code>convert_chatgpt_to_obsidian.py</code>：<br>
+            • 自動依<strong>專案分組</strong>建立子資料夾<br>
+            • 每篇對話轉為 <code>YYYYMMDD｜標題.md</code><br>
+            • 自動產出 <code>_00_匯出總覽.md</code> 索引。
+          </p>
+          <div class="callout callout-success" style="margin-top: auto; padding: 10px; font-size: 0.78rem;">
+            ✅ 輸出至 <code>Obsidian/Clippings/ChatGPT匯出_鶴仁/</code>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Section: Full Material Package Explorer -->
-  <section id="materials">
-    <div class="container">
+      <!-- Tool Switcher Tabs -->
+      <div class="card" style="margin-top: 24px;">
+        <h4 style="margin-bottom: 16px; color: #ffffff; display: flex; align-items: center; gap: 8px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          ChatGPT 匯出工具庫（4 支腳本原始碼與說明）
+        </h4>
+
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchToolTab(0)">1. 全量匯出 (chatgpt_export_all.js)</button>
+          <button class="tab-btn" onclick="switchToolTab(1)">2. 專案保守模式 (chatgpt_export_projects_only.js)</button>
+          <button class="tab-btn" onclick="switchToolTab(2)">3. Hermes 轉檔核心 (convert_chatgpt_to_obsidian.py)</button>
+          <button class="tab-btn" onclick="switchToolTab(3)">4. 多檔合併工具 (merge_exports.py)</button>
+        </div>
+
+        <!-- Tool Tab 0 -->
+        <div class="tab-pane active" id="toolPane0">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px;">
+            <strong>用途：</strong>在 ChatGPT 網頁 Console 貼上執行，一鍵匯出常規對話與專案對話。隨機延遲 1.5–4 秒模擬人工點擊。
+          </p>
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">chatgpt_export_all.js</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('tool0Text').innerText)">一鍵複製 JS</button>
+            </div>
+            <pre class="code-content" id="tool0Text">/**
+ * ChatGPT One-Click Full Export (Regular + Project conversations)
+ * ================================================================
+ * Usage:
+ * 1. Open https://chatgpt.com and log in
+ * 2. F12 → Console
+ * 3. Paste this entire script, press Enter
+ * 4. Wait for completion — files download automatically
+ *
+ * DO NOT refresh the page while the script is running!
+ */
+
+(async () =&gt; {
+  const PAGE_SIZE = 100;
+  // Random delay 1.5~4s to mimic human behavior
+  const randomDelay = () =&gt; 1500 + Math.random() * 2500;
+
+  console.log(&quot;🔑 获取 access token...&quot;);
+  const sessionResp = await fetch(&quot;/api/auth/session&quot;);
+  const sessionData = await sessionResp.json();
+  const token = sessionData.accessToken;
+  if (!token) { console.error(&quot;❌ 无法获取 token，请确保已登录&quot;); return; }
+  console.log(&quot;✅ Token 获取成功&quot;);
+
+  const headers = { Authorization: `Bearer ${token}`, &quot;Content-Type&quot;: &quot;application/json&quot; };
+  const sleep = (ms) =&gt; new Promise((r) =&gt; setTimeout(r, ms));
+
+  async function apiGet(url, retries = 3) {
+    for (let i = 0; i &lt; retries; i++) {
+      try {
+        const resp = await fetch(url, { headers });
+        if (resp.status === 429) { console.warn(&quot;⚠️ 限流，等15秒...&quot;); await sleep(15000); continue; }
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        return await resp.json();
+      } catch (e) {
+        if (i === retries - 1) throw e;
+        console.warn(`⚠️ 重试 ${i+1}/${retries}: ${e.message}`);
+        await sleep(2000);
+      }
+    }
+  }
+
+  // ==========================================
+  // Step 1: Get regular conversation list
+  // ==========================================
+  console.log(&quot;\n📋 [1/4] 获取常规对话列表...&quot;);
+  let allConversations = [];
+  let offset = 0;
+
+  while (true) {
+    const data = await apiGet(`/backend-api/conversations?offset=${offset}&amp;limit=${PAGE_SIZE}&amp;order=updated`);
+    const items = data.items || [], total = data.total || 0;
+    if (items.length === 0) break;
+    allConversations.push(...items.map(c =&gt; ({ ...c, _source: &quot;常规对话&quot; })));
+    console.log(`  已获取 ${allConversations.length}/${total} 条`);
+    offset += PAGE_SIZE;
+    if (offset &gt;= total) break;
+    await sleep(randomDelay());
+  }
+  console.log(`✅ 常规对话: ${allConversations.length} 条`);
+
+  // ==========================================
+  // Step 2: Get project (Gizmos) conversations
+  // ==========================================
+  console.log(&quot;\n📂 [2/4] 获取项目列表...&quot;);
+  let projects = [];
+  try {
+    const sidebarData = await apiGet(&quot;/backend-api/gizmos/snorlax/sidebar&quot;);
+    projects = (sidebarData.items || []).map(item =&gt; ({
+      id: item.gizmo?.id || item.id,
+      name: item.gizmo?.display?.name || item.title || &quot;未命名项目&quot;,
+    }));
+    console.log(`✅ 发现 ${projects.length} 个项目: ${projects.map(p =&gt; p.name).join(&quot;, &quot;)}`);
+  } catch (e) {
+    console.warn(`⚠️ 获取项目列表失败: ${e.message}，跳过项目对话`);
+  }
+
+  for (const project of projects) {
+    console.log(`\n  📂 项目「${project.name}」...`);
+    let cursor = &quot;0&quot;;
+    let projectConvCount = 0;
+
+    while (cursor !== null &amp;&amp; cursor !== undefined) {
+      try {
+        const data = await apiGet(`/backend-api/gizmos/${project.id}/conversations?cursor=${cursor}`);
+        const items = data.items || [];
+        if (items.length === 0) break;
+
+        const existingIds = new Set(allConversations.map(c =&gt; c.id));
+        for (const item of items) {
+          if (!existingIds.has(item.id)) {
+            allConversations.push({ ...item, _source: `项目: ${project.name}` });
+            projectConvCount++;
+          }
+        }
+
+        cursor = data.cursor || null;
+        await sleep(randomDelay());
+      } catch (e) {
+        console.warn(`  ⚠️ 项目「${project.name}」获取失败: ${e.message}`);
+        break;
+      }
+    }
+    console.log(`    ✅ 新增 ${projectConvCount} 条对话`);
+  }
+
+  console.log(`\n✅ 总计: ${allConversations.length} 条对话（含项目）`);
+
+  // ==========================================
+  // Step 3: Download full conversation details
+  // ==========================================
+  console.log(&quot;\n📥 [3/4] 下载对话内容...&quot;);
+  const allDetails = [];
+  let success = 0, failed = 0;
+
+  for (let i = 0; i &lt; allConversations.length; i++) {
+    const conv = allConversations[i];
+    const title = conv.title || &quot;Untitled&quot;;
+    const source = conv._source || &quot;&quot;;
+
+    try {
+      const detail = await apiGet(`/backend-api/conversation/${conv.id}`);
+      if (detail) {
+        detail._source = source;
+        allDetails.push(detail);
+      } else {
+        throw new Error(&quot;返回数据为空&quot;);
+      }
+      success++;
+      if ((i+1) % 10 === 0 || i === allConversations.length - 1)
+        console.log(`  [${i+1}/${allConversations.length}] ${title.slice(0,35)} (${source}) ✅`);
+    } catch (e) {
+      console.warn(`  [${i+1}/${allConversations.length}] ${title.slice(0,35)}... ❌ ${e.message}`);
+      failed++;
+    }
+    await sleep(randomDelay());
+  }
+
+  // ==========================================
+  // Step 4: Generate export files
+  // ==========================================
+  console.log(&quot;\n📝 [4/4] 生成导出文件...&quot;);
+
+  function extractMessages(convData) {
+    if (!convData || !convData.mapping) return [];
+    const mapping = convData.mapping;
+    let rootId = null;
+    for (const [id, node] of Object.entries(mapping)) { if (!node.parent) { rootId = id; break; } }
+    if (!rootId) return [];
+    const messages = [], queue = [rootId];
+    while (queue.length &gt; 0) {
+      const node = mapping[queue.shift()];
+      if (!node) continue;
+      const msg = node.message;
+      if (msg &amp;&amp; msg.content &amp;&amp; msg.content.parts) {
+        const role = msg.author?.role || &quot;unknown&quot;;
+        const text = msg.content.parts.filter(p =&gt; typeof p === &quot;string&quot;).join(&quot;\n&quot;).trim();
+        if (text &amp;&amp; [&quot;user&quot;,&quot;assistant&quot;,&quot;system&quot;,&quot;tool&quot;].includes(role))
+          messages.push({ role, content: text, model: msg.metadata?.model_slug || &quot;&quot; });
+      }
+      if (node.children?.length &gt; 0) queue.push(node.children[0]);
+    }
+    return messages;
+  }
+
+  function convToMarkdown(d) {
+    const title = d.title || &quot;Untitled&quot;;
+    const source = d._source || &quot;常规对话&quot;;
+    let ct = &quot;unknown&quot;;
+    try { if (d.create_time) ct = new Date(d.create_time * 1000).toISOString().slice(0,16).replace(&quot;T&quot;,&quot; &quot;); } catch(e) {}
+    const msgs = extractMessages(d);
+    let md = `# ${title}\n\n**来源**: ${source} | **日期**: ${ct}\n\n`;
+    for (const m of msgs) {
+      const label = {user:&quot;👤 User&quot;,assistant:&quot;🤖 Assistant&quot;,system:&quot;⚙️ System&quot;,tool:&quot;🔧 Tool&quot;}[m.role]||m.role;
+      md += `\n## ${label}${m.model?` (${m.model})`:&quot;&quot;}\n\n${m.content}\n\n`;
+    }
+    return md;
+  }
+
+  const allDataJson = JSON.stringify(allDetails, null, 2);
+
+  const indexData = allConversations.map(c =&gt; {
+    let ct = null, ut = null;
+    try { if (c.create_time) ct = new Date(c.create_time * 1000).toISOString(); } catch(e) {}
+    try { if (c.update_time) ut = new Date(c.update_time * 1000).toISOString(); } catch(e) {}
+    return { id: c.id, title: c.title, source: c._source, create_time: ct, update_time: ut };
+  });
+  const indexJson = JSON.stringify(indexData, null, 2);
+
+  let allMd = `# ChatGPT 对话导出（含项目）\n\n导出时间: ${new Date().toISOString()}\n共 ${allDetails.length} 条对话\n\n---\n\n`;
+  for (const d of allDetails) allMd += convToMarkdown(d) + &quot;\n\n---\n\n&quot;;
+
+  function dl(content, filename, type=&quot;application/json&quot;) {
+    const a = document.createElement(&quot;a&quot;);
+    a.href = URL.createObjectURL(new Blob([content], {type}));
+    a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+
+  dl(allDataJson, &quot;chatgpt_all_conversations.json&quot;);
+  await sleep(500);
+  dl(indexJson, &quot;chatgpt_conversations_index.json&quot;);
+  await sleep(500);
+  dl(allMd, &quot;chatgpt_all_conversations.md&quot;, &quot;text/markdown&quot;);
+
+  console.log(&quot;\n&quot; + &quot;=&quot;.repeat(50));
+  console.log(`🎉 导出完成! 成功: ${success}, 失败: ${failed}`);
+  console.log(`📁 已下载 3 个文件（含 ${projects.length} 个项目的对话）`);
+  console.log(&quot;=&quot;.repeat(50));
+})();
+</pre>
+          </div>
+        </div>
+
+        <!-- Tool Tab 1 -->
+        <div class="tab-pane" id="toolPane1">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px;">
+            <strong>用途：</strong>只抓專案內的對話，每次請求間隔 8–15 秒極度保守，遇 429 限流自動階梯遞增等待，適合免費帳號或對話量龐大時。
+          </p>
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">chatgpt_export_projects_only.js</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('tool1Text').innerText)">一鍵複製 JS</button>
+            </div>
+            <pre class="code-content" id="tool1Text">/**
+ * ChatGPT 项目对话导出（仅项目）
+ * 只抓项目里的对话，间隔长，避免限流
+ */
+(async () =&gt; {
+  console.log(&quot;🔑 获取 access token...&quot;);
+  const sessionResp = await fetch(&quot;/api/auth/session&quot;);
+  const { accessToken: token } = await sessionResp.json();
+  if (!token) { console.error(&quot;❌ 无法获取 token&quot;); return; }
+  console.log(&quot;✅ Token 获取成功&quot;);
+
+  const headers = { Authorization: `Bearer ${token}`, &quot;Content-Type&quot;: &quot;application/json&quot; };
+  const sleep = (ms) =&gt; new Promise((r) =&gt; setTimeout(r, ms));
+  // 每次请求间隔 8~15 秒，非常保守
+  const randomDelay = () =&gt; 8000 + Math.random() * 7000;
+
+  async function apiGet(url, retries = 5) {
+    for (let i = 0; i &lt; retries; i++) {
+      try {
+        const resp = await fetch(url, { headers });
+        if (resp.status === 429) {
+          const wait = 30 + i * 15;  // 30s, 45s, 60s, 75s, 90s 递增等待
+          console.warn(`⚠️ 限流，等 ${wait} 秒... (第${i+1}次)`);
+          await sleep(wait * 1000);
+          continue;
+        }
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        return await resp.json();
+      } catch (e) {
+        if (i === retries - 1) throw e;
+        console.warn(`⚠️ 重试 ${i+1}/${retries}: ${e.message}`);
+        await sleep(10000);
+      }
+    }
+  }
+
+  // 1. 获取项目列表
+  console.log(&quot;\n📂 [1/3] 获取项目列表...&quot;);
+  const sidebarData = await apiGet(&quot;/backend-api/gizmos/snorlax/sidebar&quot;);
+  const projects = (sidebarData.items || []).map(item =&gt; ({
+    id: item.gizmo?.id || item.id,
+    name: item.gizmo?.display?.name || item.title || &quot;未命名项目&quot;,
+  }));
+  console.log(`✅ 发现 ${projects.length} 个项目: ${projects.map(p =&gt; p.name).join(&quot;, &quot;)}`);
+
+  if (projects.length === 0) { console.log(&quot;没有项目，退出&quot;); return; }
+
+  // 2. 获取项目内对话列表
+  console.log(&quot;\n📋 [2/3] 获取项目对话列表...&quot;);
+  let projectConversations = [];
+
+  for (const project of projects) {
+    console.log(`  📂 项目「${project.name}」...`);
+    let cursor = &quot;0&quot;;
+
+    while (cursor !== null &amp;&amp; cursor !== undefined) {
+      try {
+        const data = await apiGet(`/backend-api/gizmos/${project.id}/conversations?cursor=${cursor}`);
+        const items = data.items || [];
+        if (items.length === 0) break;
+
+        for (const item of items) {
+          projectConversations.push({ ...item, _projectName: project.name });
+        }
+
+        cursor = data.cursor || null;
+        await sleep(randomDelay());
+      } catch (e) {
+        console.warn(`  ⚠️ 项目「${project.name}」获取失败: ${e.message}`);
+        break;
+      }
+    }
+  }
+
+  console.log(`✅ 项目对话共 ${projectConversations.length} 条`);
+
+  // 3. 逐条下载完整对话
+  console.log(`\n📥 [3/3] 下载对话内容（每条间隔 8~15 秒）...`);
+  const allDetails = [];
+  let success = 0, failed = 0;
+
+  for (let i = 0; i &lt; projectConversations.length; i++) {
+    const conv = projectConversations[i];
+    const title = conv.title || &quot;Untitled&quot;;
+    const project = conv._projectName;
+
+    console.log(`  [${i+1}/${projectConversations.length}] ${title} (${project})`);
+
+    try {
+      const detail = await apiGet(`/backend-api/conversation/${conv.id}`);
+      if (detail) {
+        detail._source = `项目: ${project}`;
+        allDetails.push(detail);
+        success++;
+        console.log(`    ✅ 成功`);
+      } else {
+        throw new Error(&quot;返回数据为空&quot;);
+      }
+    } catch (e) {
+      console.warn(`    ❌ 失败: ${e.message}`);
+      failed++;
+    }
+
+    if (i &lt; projectConversations.length - 1) {
+      const delay = randomDelay();
+      console.log(`    ⏳ 等待 ${(delay/1000).toFixed(1)} 秒...`);
+      await sleep(delay);
+    }
+  }
+
+  // 生成文件
+  function extractMessages(convData) {
+    if (!convData || !convData.mapping) return [];
+    const mapping = convData.mapping;
+    let rootId = null;
+    for (const [id, node] of Object.entries(mapping)) { if (!node.parent) { rootId = id; break; } }
+    if (!rootId) return [];
+    const messages = [], queue = [rootId];
+    while (queue.length &gt; 0) {
+      const node = mapping[queue.shift()];
+      if (!node) continue;
+      const msg = node.message;
+      if (msg &amp;&amp; msg.content &amp;&amp; msg.content.parts) {
+        const role = msg.author?.role || &quot;unknown&quot;;
+        const text = msg.content.parts.filter(p =&gt; typeof p === &quot;string&quot;).join(&quot;\n&quot;).trim();
+        if (text &amp;&amp; [&quot;user&quot;,&quot;assistant&quot;,&quot;system&quot;,&quot;tool&quot;].includes(role))
+          messages.push({ role, content: text, model: msg.metadata?.model_slug || &quot;&quot; });
+      }
+      if (node.children?.length &gt; 0) queue.push(node.children[0]);
+    }
+    return messages;
+  }
+
+  let allMd = `# ChatGPT 项目对话导出\n\n导出时间: ${new Date().toISOString()}\n共 ${allDetails.length} 条项目对话\n\n---\n\n`;
+  for (const d of allDetails) {
+    const title = d.title || &quot;Untitled&quot;;
+    const source = d._source || &quot;&quot;;
+    let ct = &quot;unknown&quot;;
+    try { if (d.create_time) ct = new Date(d.create_time * 1000).toISOString().slice(0,16).replace(&quot;T&quot;,&quot; &quot;); } catch(e) {}
+    const msgs = extractMessages(d);
+    allMd += `# ${title}\n\n**来源**: ${source} | **日期**: ${ct}\n\n`;
+    for (const m of msgs) {
+      const label = {user:&quot;👤 User&quot;,assistant:&quot;🤖 Assistant&quot;,system:&quot;⚙️ System&quot;,tool:&quot;🔧 Tool&quot;}[m.role]||m.role;
+      allMd += `\n## ${label}${m.model?` (${m.model})`:&quot;&quot;}\n\n${m.content}\n\n`;
+    }
+    allMd += &quot;\n---\n\n&quot;;
+  }
+
+  function dl(content, filename, type=&quot;application/json&quot;) {
+    const a = document.createElement(&quot;a&quot;);
+    a.href = URL.createObjectURL(new Blob([content], {type}));
+    a.download = filename;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  }
+
+  dl(JSON.stringify(allDetails, null, 2), &quot;chatgpt_project_conversations.json&quot;);
+  await sleep(500);
+  dl(allMd, &quot;chatgpt_project_conversations.md&quot;, &quot;text/markdown&quot;);
+
+  console.log(&quot;\n&quot; + &quot;=&quot;.repeat(50));
+  console.log(`🎉 项目对话导出完成! 成功: ${success}, 失败: ${failed}`);
+  console.log(&quot;📁 已下载 2 个文件:&quot;);
+  console.log(&quot;  - chatgpt_project_conversations.json&quot;);
+  console.log(&quot;  - chatgpt_project_conversations.md&quot;);
+  console.log(&quot;=&quot;.repeat(50));
+})();
+</pre>
+          </div>
+        </div>
+
+        <!-- Tool Tab 2 -->
+        <div class="tab-pane" id="toolPane2">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px;">
+            <strong>用途：</strong>Hermes 自動轉檔 Python 腳本。解析 JSON 訊息樹，依專案建立資料夾，生成標準 YAML frontmatter 的 Markdown 筆記並產出總覽索引。
+          </p>
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">convert_chatgpt_to_obsidian.py</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('tool2Text').innerText)">一鍵複製 Python</button>
+            </div>
+            <pre class="code-content" id="tool2Text">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&quot;&quot;&quot;
+convert_chatgpt_to_obsidian.py
+================================
+Hermes 批次轉檔：ChatGPT 匯出 JSON → Obsidian 筆記
+（配合 24kchengYe/chatgpt-exporter 產出的 chatgpt_all_conversations.json）
+
+用法:
+    python convert_chatgpt_to_obsidian.py &lt;匯出資料夾&gt; [--out &lt;Obsidian輸出資料夾&gt;]
+
+輸入 (匯出資料夾內):
+    chatgpt_all_conversations.json    — 全部對話（含 mapping 訊息、_source 專案標籤）
+    chatgpt_conversations_index.json  — 索引（id/title/source/create_time）[可選]
+
+輸出 (預設):
+    &lt;Obsidian&gt;/Clippings/ChatGPT匯出_鶴仁/
+        &lt;專案名&gt;/
+            YYYYMMDD｜對話標題.md
+        _00_匯出總覽.md                 — 各專案對話統計索引
+
+特點:
+    - 保留專案分組（_source: &quot;项目: XX&quot; / &quot;常规对话&quot;）
+    - 每篇對話一筆筆記：YAML frontmatter + 逐輪訊息（👤/🤖）
+    - 輸出總覽索引，方便 Obsidian 彙整
+&quot;&quot;&quot;
+import json, os, re, sys, io, argparse
+from datetime import datetime
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding=&#x27;utf-8&#x27;)
+
+def safe_name(s, maxlen=60):
+    s = re.sub(r&#x27;[\\/:*?&quot;&lt;&gt;|\n\r\t]&#x27;, &#x27; &#x27;, s).strip()
+    s = re.sub(r&#x27;\s+&#x27;, &#x27; &#x27;, s)
+    return s[:maxlen].rstrip(&#x27;.&#x27;)
+
+def extract_messages(conv):
+    &quot;&quot;&quot;從 mapping 提取 [role, content, model] 清單（與 chatgpt_export_all.js 相同邏輯）&quot;&quot;&quot;
+    mapping = conv.get(&#x27;mapping&#x27;) or {}
+    root_id = next((i for i, n in mapping.items() if not n.get(&#x27;parent&#x27;)), None)
+    if not root_id:
+        return []
+    out, queue = [], [root_id]
+    while queue:
+        node = mapping.get(queue.pop(0))
+        if not node:
+            continue
+        msg = node.get(&#x27;message&#x27;)
+        if msg and msg.get(&#x27;content&#x27;, {}).get(&#x27;parts&#x27;):
+            role = (msg.get(&#x27;author&#x27;) or {}).get(&#x27;role&#x27;, &#x27;unknown&#x27;)
+            parts = msg[&#x27;content&#x27;][&#x27;parts&#x27;]
+            text = &#x27;\n&#x27;.join(p for p in parts if isinstance(p, str)).strip()
+            if text and role in (&#x27;user&#x27;, &#x27;assistant&#x27;, &#x27;system&#x27;, &#x27;tool&#x27;):
+                out.append({&#x27;role&#x27;: role, &#x27;content&#x27;: text,
+                            &#x27;model&#x27;: (msg.get(&#x27;metadata&#x27;) or {}).get(&#x27;model_slug&#x27;, &#x27;&#x27;)})
+        if node.get(&#x27;children&#x27;):
+            queue.append(node[&#x27;children&#x27;][0])
+    return out
+
+def fmt_date(ts):
+    &quot;&quot;&quot;ChatGPT create_time 是 Unix epoch 秒&quot;&quot;&quot;
+    if not ts:
+        return &#x27;&#x27;
+    try:
+        return datetime.fromtimestamp(float(ts)).strftime(&#x27;%Y-%m-%d %H:%M&#x27;)
+    except Exception:
+        return &#x27;&#x27;
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument(&#x27;src&#x27;, help=&#x27;ChatGPT 匯出資料夾（含 chatgpt_all_conversations.json）&#x27;)
+    ap.add_argument(&#x27;--out&#x27;, default=None,
+                    help=&#x27;Obsidian 輸出根資料夾（預設: &lt;src&gt; 上一層的 Obsidian 慣例路徑）&#x27;)
+    args = ap.parse_args()
+
+    src_dir = args.src
+    json_path = os.path.join(src_dir, &#x27;chatgpt_all_conversations.json&#x27;)
+    if not os.path.exists(json_path):
+        print(f&#x27;❌ 找不到 {json_path}&#x27;)
+        sys.exit(1)
+
+    # 輸出資料夾：預設 G:/我的雲端硬碟/Obsidian/Clippings/ChatGPT匯出_鶴仁/
+    if args.out:
+        out_root = args.out
+    else:
+        vault = os.environ.get(&#x27;OBSIDIAN_VAULT&#x27;, r&#x27;G:/我的雲端硬碟/Obsidian&#x27;)
+        out_root = os.path.join(vault, &#x27;Clippings&#x27;, &#x27;ChatGPT匯出_鶴仁&#x27;)
+    os.makedirs(out_root, exist_ok=True)
+
+    convs = json.load(open(json_path, encoding=&#x27;utf-8&#x27;))
+    print(f&#x27;📄 讀取 {len(convs)} 篇對話&#x27;)
+
+    # 依 _source 分組：專案 → 對話清單
+    groups = {}
+    for c in convs:
+        src = c.get(&#x27;_source&#x27;) or &#x27;常规对话&#x27;
+        src = src.replace(&#x27;项目: &#x27;, &#x27;&#x27;).strip() if src.startswith(&#x27;项目:&#x27;) else src
+        groups.setdefault(src, []).append(c)
+
+    stats = {}
+    total = 0
+    for proj, items in sorted(groups.items()):
+        proj_dir = os.path.join(out_root, safe_name(proj) or &#x27;未分類&#x27;)
+        os.makedirs(proj_dir, exist_ok=True)
+        stats[proj] = len(items)
+        for c in items:
+            title = c.get(&#x27;title&#x27;) or &#x27;Untitled&#x27;
+            ts = fmt_date(c.get(&#x27;create_time&#x27;))
+            date_prefix = ts[:10].replace(&#x27;-&#x27;, &#x27;&#x27;) if ts else &#x27;日期待確認&#x27;
+            fname = f&#x27;{date_prefix}｜{safe_name(title, 45)}.md&#x27;
+            fpath = os.path.join(proj_dir, fname)
+            msgs = extract_messages(c)
+            label = {&#x27;user&#x27;: &#x27;👤 User&#x27;, &#x27;assistant&#x27;: &#x27;🤖 Assistant&#x27;,
+                     &#x27;system&#x27;: &#x27;⚙️ System&#x27;, &#x27;tool&#x27;: &#x27;🔧 Tool&#x27;}
+            body = &#x27;\n\n&#x27;.join(
+                f&#x27;## {label.get(m[&quot;role&quot;], m[&quot;role&quot;])}&#x27; +
+                (f&#x27; ({m[&quot;model&quot;]})&#x27; if m[&#x27;model&#x27;] else &#x27;&#x27;) + &#x27;\n\n&#x27; + m[&#x27;content&#x27;]
+                for m in msgs)
+            note = (f&#x27;---\ncreated: {ts or &quot;&quot;}\nsource: ChatGPT 匯出\nproject: {proj}\n&#x27;
+                    f&#x27;tags: [ChatGPT匯出, 鶴仁]\n---\n\n&#x27;
+                    f&#x27;# {title}\n\n&gt; [!info] 對話資訊\n&gt; - **專案**: {proj}\n&#x27;
+                    f&#x27;&gt; - **日期**: {ts or &quot;待確認&quot;}\n&gt; - **訊息數**: {len(msgs)}\n\n{body}\n&#x27;)
+            with open(fpath, &#x27;w&#x27;, encoding=&#x27;utf-8-sig&#x27;) as f:
+                f.write(note)
+            total += 1
+        print(f&#x27;  ✅ {proj}: {len(items)} 篇 → {proj_dir}&#x27;)
+
+    # 總覽索引
+    overview = [&#x27;---\ncreated: 2026-08-18\nsource: ChatGPT 匯出\n&#x27;
+                &#x27;tags: [ChatGPT匯出, 鶴仁, 索引]\n---\n&#x27;,
+                &#x27;# ChatGPT 對話匯出總覽（鶴仁）&#x27;, &#x27;&#x27;]
+    overview.append(&#x27;| 專案 | 對話數 |&#x27;)
+    overview.append(&#x27;|---|---|&#x27;)
+    for proj, n in sorted(stats.items()):
+        overview.append(f&#x27;| [[{safe_name(proj) or &quot;未分類&quot;}]] | {n} |&#x27;)
+    overview.append(f&#x27;\n**合計：{total} 篇對話**&#x27;)
+    with open(os.path.join(out_root, &#x27;_00_匯出總覽.md&#x27;), &#x27;w&#x27;, encoding=&#x27;utf-8-sig&#x27;) as f:
+        f.write(&#x27;\n&#x27;.join(overview) + &#x27;\n&#x27;)
+
+    print(f&#x27;\n🎉 完成！共 {total} 篇筆記 → {out_root}&#x27;)
+
+if __name__ == &#x27;__main__&#x27;:
+    main()
+</pre>
+          </div>
+        </div>
+
+        <!-- Tool Tab 3 -->
+        <div class="tab-pane" id="toolPane3">
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 10px;">
+            <strong>用途：</strong>將常規對話匯出與分批專案匯出的多個 JSON 檔案進行去重、時間排序並合併為單一完整匯出檔。
+          </p>
+          <div class="code-box">
+            <div class="code-header">
+              <span class="code-title">merge_exports.py</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('tool3Text').innerText)">一鍵複製 Python</button>
+            </div>
+            <pre class="code-content" id="tool3Text">&quot;&quot;&quot;
+Merge regular and project ChatGPT exports into a single file.
+
+Usage:
+  python merge_exports.py --regular all.json --projects projects.json --output merged/
+
+Or simply:
+  python merge_exports.py  (uses default paths in current directory)
+&quot;&quot;&quot;
+
+import json
+import os
+import sys
+import argparse
+from datetime import datetime
+
+
+def extract_messages(conv_data):
+    &quot;&quot;&quot;Extract ordered messages from conversation mapping tree.&quot;&quot;&quot;
+    if not conv_data or &#x27;mapping&#x27; not in conv_data:
+        return []
+    mapping = conv_data[&#x27;mapping&#x27;]
+    root_id = None
+    for nid, node in mapping.items():
+        if node.get(&#x27;parent&#x27;) is None:
+            root_id = nid
+            break
+    if not root_id:
+        return []
+    messages = []
+    queue = [root_id]
+    while queue:
+        node_id = queue.pop(0)
+        node = mapping.get(node_id, {})
+        msg = node.get(&#x27;message&#x27;)
+        if msg and msg.get(&#x27;content&#x27;) and msg[&#x27;content&#x27;].get(&#x27;parts&#x27;):
+            role = msg.get(&#x27;author&#x27;, {}).get(&#x27;role&#x27;, &#x27;unknown&#x27;)
+            parts = [p for p in msg[&#x27;content&#x27;][&#x27;parts&#x27;] if isinstance(p, str)]
+            text = &#x27;\n&#x27;.join(parts).strip()
+            if text and role in (&#x27;user&#x27;, &#x27;assistant&#x27;, &#x27;system&#x27;, &#x27;tool&#x27;):
+                model = msg.get(&#x27;metadata&#x27;, {}).get(&#x27;model_slug&#x27;, &#x27;&#x27;)
+                messages.append({&#x27;role&#x27;: role, &#x27;content&#x27;: text, &#x27;model&#x27;: model})
+        children = node.get(&#x27;children&#x27;, [])
+        if children:
+            queue.append(children[0])
+    return messages
+
+
+def main():
+    parser = argparse.ArgumentParser(description=&#x27;Merge ChatGPT exports&#x27;)
+    parser.add_argument(&#x27;--regular&#x27;, default=&#x27;chatgpt_all_conversations.json&#x27;,
+                        help=&#x27;Regular conversations JSON file&#x27;)
+    parser.add_argument(&#x27;--projects&#x27;, default=&#x27;chatgpt_project_conversations.json&#x27;,
+                        help=&#x27;Project conversations JSON file&#x27;)
+    parser.add_argument(&#x27;--output&#x27;, default=&#x27;merged&#x27;,
+                        help=&#x27;Output directory&#x27;)
+    args = parser.parse_args()
+
+    # Load files
+    all_conv = []
+    if os.path.exists(args.regular):
+        all_conv = json.load(open(args.regular, encoding=&#x27;utf-8&#x27;))
+        print(f&quot;Regular conversations: {len(all_conv)}&quot;)
+    else:
+        print(f&quot;Warning: {args.regular} not found, skipping&quot;)
+
+    proj_conv = []
+    if os.path.exists(args.projects):
+        proj_conv = json.load(open(args.projects, encoding=&#x27;utf-8&#x27;))
+        print(f&quot;Project conversations: {len(proj_conv)}&quot;)
+    else:
+        print(f&quot;Warning: {args.projects} not found, skipping&quot;)
+
+    # Deduplicate and merge
+    existing_ids = set()
+    for d in all_conv:
+        cid = d.get(&#x27;conversation_id&#x27;) or d.get(&#x27;id&#x27;, &#x27;&#x27;)
+        existing_ids.add(cid)
+
+    added = 0
+    for d in proj_conv:
+        cid = d.get(&#x27;conversation_id&#x27;) or d.get(&#x27;id&#x27;, &#x27;&#x27;)
+        if cid not in existing_ids:
+            all_conv.append(d)
+            existing_ids.add(cid)
+            added += 1
+
+    # Sort by create_time
+    all_conv.sort(key=lambda x: x.get(&#x27;create_time&#x27;) or 0)
+    print(f&quot;Merged total: {len(all_conv)} (added {added} from projects)&quot;)
+
+    # Create output directory
+    os.makedirs(args.output, exist_ok=True)
+
+    # Save merged JSON
+    json_path = os.path.join(args.output, &#x27;chatgpt_merged_all.json&#x27;)
+    with open(json_path, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:
+        json.dump(all_conv, f, ensure_ascii=False, indent=2)
+    print(f&quot;Saved: {json_path}&quot;)
+
+    # Save merged Markdown (using plain text separators to avoid conflicts)
+    md_path = os.path.join(args.output, &#x27;chatgpt_merged_all.md&#x27;)
+    lines = []
+    lines.append(f&#x27;&lt;!-- ChatGPT Full Export --&gt;&#x27;)
+    lines.append(f&#x27;&lt;!-- Exported: {datetime.now().strftime(&quot;%Y-%m-%d %H:%M&quot;)} --&gt;&#x27;)
+    lines.append(f&#x27;&lt;!-- Total: {len(all_conv)} conversations --&gt;\n&#x27;)
+
+    for idx, d in enumerate(all_conv):
+        title = d.get(&#x27;title&#x27;, &#x27;Untitled&#x27;)
+        source = d.get(&#x27;_source&#x27;, &#x27;Regular&#x27;)
+        ct = &#x27;unknown&#x27;
+        try:
+            if d.get(&#x27;create_time&#x27;):
+                ct = datetime.fromtimestamp(d[&#x27;create_time&#x27;]).strftime(&#x27;%Y-%m-%d %H:%M&#x27;)
+        except:
+            pass
+
+        lines.append(f&#x27;{&quot;=&quot; * 60}&#x27;)
+        lines.append(f&#x27;Conversation {idx+1}/{len(all_conv)}: {title}&#x27;)
+        lines.append(f&#x27;Source: {source} | Date: {ct}&#x27;)
+        lines.append(f&#x27;{&quot;=&quot; * 60}\n&#x27;)
+
+        msgs = extract_messages(d)
+        for m in msgs:
+            role_label = {&#x27;user&#x27;: &#x27;User&#x27;, &#x27;assistant&#x27;: &#x27;Assistant&#x27;,
+                          &#x27;system&#x27;: &#x27;System&#x27;, &#x27;tool&#x27;: &#x27;Tool&#x27;}.get(m[&#x27;role&#x27;], m[&#x27;role&#x27;])
+            model_str = f&quot; ({m[&#x27;model&#x27;]})&quot; if m.get(&#x27;model&#x27;) else &#x27;&#x27;
+            lines.append(f&#x27;--- {role_label}{model_str} ---\n&#x27;)
+            lines.append(m[&#x27;content&#x27;])
+            lines.append(&#x27;&#x27;)
+        lines.append(&#x27;&#x27;)
+
+    with open(md_path, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as f:
+        f.write(&#x27;\n&#x27;.join(lines))
+    print(f&quot;Saved: {md_path}&quot;)
+
+
+if __name__ == &#x27;__main__&#x27;:
+    main()
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-info" style="margin-top: 20px;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        <div>
+          <strong>安全性與隱私：</strong>
+          匯出腳本全程在鶴仁本機瀏覽器內運作，使用當前登入之 Session Token，無須額外提供帳號密碼或 API Key；相較於 OpenAI 官方匯出（需要等候數天且不含專案分組），本方案即時且完整保留專案結構。
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 8: Interactive Acceptance Checklist -->
+    <section id="checklist">
       <div class="section-header">
-        <span class="section-badge">MATERIAL REPOSITORY</span>
-        <h2 class="section-title">教學素材包原始檔案清單</h2>
-        <p class="section-desc">素材包內 9 份標準化檔案，點擊即可快速檢視或複製。</p>
+        <span class="section-badge">Module 8 ｜ 驗收標準</span>
+        <h2 class="section-title">現場導入驗收清單</h2>
+        <p class="section-desc">教學結束前，與鶴仁逐一確認以下 10 個核心項目。本清單支援點擊打勾與進度儲存，全部勾選即代表導入 100% 圓滿成功！</p>
       </div>
 
-      <div class="grid-3">
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">00_README.md</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">素材包說明與山姆大叔架構方針初始構想。</p>
-          <button class="copy-btn" onclick="copyRawFile('00_README')">複製檔案內容</button>
+      <div class="checklist-container">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h4 style="color: #ffffff; font-size: 1.1rem;">導入進度達成率：<span id="progressPercent" style="color: var(--accent-cyan);">0%</span></h4>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary" onclick="checkAllItems()" style="padding: 5px 12px; font-size: 0.8rem;">全部勾選</button>
+            <button class="btn btn-secondary" onclick="resetChecklist()" style="padding: 5px 12px; font-size: 0.8rem;">重設清單</button>
+          </div>
         </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">01_SOUL.md</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">鶴仁專屬飯店營運特助角色設定完整全文。</p>
-          <button class="copy-btn" onclick="copyRawFile('01_SOUL')">複製檔案內容</button>
+
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressFill"></div>
         </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">02_meeting_action_extractor</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">會議速記 ➔ 6 大部門行動矩陣 YAML。</p>
-          <button class="copy-btn" onclick="copyRawFile('02_meeting')">複製檔案內容</button>
-        </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">03_hotel_milestone_tracker</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">華邑酒店籌備里程碑與關鍵路徑追蹤 YAML。</p>
-          <button class="copy-btn" onclick="copyRawFile('03_hotel')">複製檔案內容</button>
-        </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">04_morning_briefing_tracker</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">晨間營運摘要定時 Skill（08:00 Cron）。</p>
-          <button class="copy-btn" onclick="copyRawFile('04_morning')">複製檔案內容</button>
-        </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">05_evening_settlement_tracker</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">晚間營運結算定時 Skill（22:30 Cron）。</p>
-          <button class="copy-btn" onclick="copyRawFile('05_evening')">複製檔案內容</button>
-        </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">06_安裝步驟一頁紙.md</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Hermes + Obsidian + Google Drive 安裝指南。</p>
-          <button class="copy-btn" onclick="copyRawFile('06_install')">複製檔案內容</button>
-        </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">07_現場教學流程.md</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">3 小時流程表、示範腳本與攜帶清單。</p>
-          <button class="copy-btn" onclick="copyRawFile('07_schedule')">複製檔案內容</button>
-        </div>
-        <div class="card">
-          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">08_Google日曆匯入.md</h4>
-          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Google Calendar 行事曆連結與 .ics 說明。</p>
-          <button class="copy-btn" onclick="copyRawFile('08_calendar')">複製檔案內容</button>
+
+        <div id="checkListItems">
+          <!-- Items injected or rendered via static HTML and bound by JS -->
+          <div class="check-item" onclick="toggleCheck(this, 0)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">1. Hermes Agent 在鶴仁筆電成功安裝且可正常啟動</div>
+              <div class="check-sub">執行 <code>hermes doctor</code> 顯示各項依賴皆為綠色正常。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 1)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">2. API Key 與模型路由配置成功</div>
+              <div class="check-sub">可順利與 LLM Provider 進行對話測試，無 401 授權錯誤。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 2)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">3. SOUL.md 角色設定注入生效</div>
+              <div class="check-sub">向 Hermes 發送「你是誰」，AI 正確回覆為鶴仁專屬之星級飯店營運特助。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 3)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">4. 會議行動矩陣 Skill 實測觸發成功</div>
+              <div class="check-sub">貼入口述速記能自動梳理出跨部門權責表格（Table）與完成期限。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 4)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">5. 華邑酒店籌備里程碑追蹤 Skill 測試成功</div>
+              <div class="check-sub">輸入現場巡查工程延誤，AI 自動識別關鍵路徑卡點並產出高管裁決建議。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 5)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">6. 晨間營運摘要（08:00）與晚間結算（22:30）Cron 定時排程已建置</div>
+              <div class="check-sub">排程 JSON 已正確載入系統，能自動定時推播重點摘要。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 6)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">7. Obsidian 第二大腦 Vault 建立完成並存放於 Google 雲端硬碟</div>
+              <div class="check-sub">確認所有筆記、SOP、操作紀錄皆儲存於本機 Google Drive 同步資料夾。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 7)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">8. 瀏覽器擴充安裝完畢（必裝 3 款：Web Clipper ＋ Voyager ＋ Gemini 匯出）</div>
+              <div class="check-sub">測試可在瀏覽器一鍵剪藏產業文章或匯出深度研究對話。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 8)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">9. ChatGPT 歷史專案對話成功匯出並透過 Hermes 批次轉檔入庫</div>
+              <div class="check-sub">在 <code>Obsidian/Clippings/ChatGPT匯出_鶴仁/</code> 下看到各專案分類筆記與總覽索引。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(this, 9)">
+            <div class="custom-checkbox"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="display:none;"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <div class="check-text">
+              <div class="check-title">10. 手機端連動確認（Google Drive / Obsidian 手機 App）</div>
+              <div class="check-sub">鶴仁在手機上能即時查閱筆電端生成的晨報、會議紀錄與專案進度。</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p style="margin-bottom: 8px;">
-        <strong>Hermes Agent 現場導入教學手冊</strong> ｜ 2026-08-19 Block & Cafe 現場教學專用
-      </p>
-      <p style="color: var(--text-muted); font-size: 0.78rem;">
-        架構設計：山姆大叔 × Gemini ｜ 學員：陳鶴仁 ｜ 技術棧：Hermes Agent ＋ Obsidian ＋ Google Drive
-      </p>
+      <p style="font-weight: 600; color: var(--text-secondary); margin-bottom: 8px;">2026-08-19 鶴仁專屬 Hermes Agent 現場導入教學手冊</p>
+      <p>由山姆大叔精心規劃製作 ｜ 星級飯店營運特助 ＆ Obsidian 第二大腦實戰</p>
     </div>
   </footer>
 
-  <!-- Mobile Bottom Bar -->
-  <div class="mobile-bottom-bar">
-    <a href="#event" class="mobile-bar-btn">
-      <span>📍</span>
-      <span>資訊</span>
-    </a>
-    <a href="#steps" class="mobile-bar-btn">
-      <span>🚀</span>
-      <span>步驟</span>
-    </a>
-    <a href="#soul" class="mobile-bar-btn">
-      <span>🤖</span>
-      <span>SOUL</span>
-    </a>
-    <a href="#skills" class="mobile-bar-btn">
-      <span>⚡</span>
-      <span>Skills</span>
-    </a>
-    <a href="#checklist" class="mobile-bar-btn">
-      <span>✅</span>
-      <span>驗收</span>
-    </a>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">已複製到剪貼簿！</span>
   </div>
 
-  <!-- Raw Files Data Store -->
   <script>
-    const rawFilesData = {"00_README.md": "﻿# 鶴仁導入教學素材包（2026-08-19 現場用）\n\n> 緣起：山姆大叔與 Gemini 討論後，選定 **Hermes Agent** 作為好友鶴仁（飯店業管理職）的數位營運特助。\n> 本素材包為 8/19（三）19:00–22:00 Block & Cafe 現場教學所用。\n\n## 素材清單\n\n| 檔名 | 用途 |\n|---|---|\n| `01_SOUL.md` | 鶴仁版角色設定（飯店營運特助）— 匯入 Hermes 即生效 |\n| `02_meeting_action_extractor.yaml` | Skill：會議速記 → 行動矩陣 |\n| `03_hotel_milestone_tracker.yaml` | Skill：華邑酒店籌備里程碑追蹤 |\n| `04_morning_briefing_tracker.md` | 定時 Skill：晨間營運摘要（含 Cron JSON，08:00） |\n| `05_evening_settlement_tracker.md` | 定時 Skill：晚間營運結算（含 Cron JSON，22:30） |\n| `06_安裝步驟一頁紙.md` | 安裝 Hermes＋Obsidian＋Google 雲端磁碟 6 步驟 |\n| `07_現場教學流程.md` | 3 小時流程＋示範腳本＋攜帶清單 |\n| `08_Google日曆匯入.md` | 明晚場次一鍵匯入行事曆 |\n\n## 架構方針（山姆大叔初始構想）\n- Hermes Agent 安裝在鶴仁**筆電**\n- **Obsidian** 當第二大腦（vault 放 Google 雲端磁碟同步）\n- 資料與設定分層 → **隨時可搬遷**、可換不同 AI Agent\n\n## 原始筆記\n`Obsidian/00_Inbox/20260817｜陳鶴仁｜Hermes Agent 飯店營運導入規劃.md`\n", "01_SOUL.md": "﻿# 核心身份 (Identity)\n你是「星級飯店營運與新案籌備高階特助」，專屬服務於飯店管理者陳鶴仁（鶴仁）。你的首要任務是降低管理者的行政摩擦力，將零散的會議紀錄、現場巡視口述與營運數據，自動轉化為結構化的決策資訊、公文與行動清單。\n\n# 核心目標 (Core Objectives)\n1. **資訊降噪與公文結構化：** 將口語化的輸入快速轉譯為符合集團規範的「主管呈報」或「跨部門正式文件」。\n2. **籌備專案追蹤：** 擔任「華邑酒店」等新案籌備的專案管理樞紐，長期記憶各節點（如廠商合約、現場驗收、採購進度），並能主動盤點逾期風險。\n3. **營運數據洞察：** 快速解析飯店營運指標（住房率 Occ%、平均房價 ADR、客房收益 RevPAR、餐飲營收），識別異常波動並提供具體改善建議。\n4. **會議行動轉化：** 從雜亂的討論中提煉結論，並拆解為「部門／負責人／期限」的清晰行動矩陣。\n\n# 行為準則 (Behavioral Guidelines)\n- **極簡高效：** 省去所有客套話、問候與前言，第一句話直接給出核心結論或最終產出物。\n- **產業語境：** 熟練使用飯店業標準術語，並具備前檯、房務、餐飲與工務跨部門協調的實務邏輯。\n- **排版優化：** 考量管理者常透過手機（通訊軟體）閱讀，必須大量使用 Markdown 清單與表格，確保資訊高度可掃描（Scannable）。\n- **主動釐清：** 若鶴仁交辦的任務缺乏關鍵資訊（如：會議負責人未定、籌備時間線缺失），請直接列出 1-3 個簡短的問題向他確認，嚴禁自行捏造事實。\n\n# 預設工作流模式 (Default Workflows)\n偵測到以下任務意圖時，請自動切換對應輸出框架：\n- **[主管回報模式]：** 輸出「背景與現況 -> 核心問題 -> 建議方案 (含 A/B 兩案對比) -> 預期效益與資源需求」。\n- **[會議管理模式]：** 輸出「決策摘要 -> 跨部門待辦清單 (Table 呈現：事項 / 負責部門 / 壓線日期) -> 潛在風險」。\n- **[籌備專案模式]：** 提取歷史對話中的「華邑酒店」進度，對比當前任務，輸出「進度更新 -> 延遲警示 -> 需高管裁決事項」。\n- **[數據決策模式]：** 針對提供的數據，輸出「核心洞察 -> 異常紅燈指標 -> 現場營運微調建議」。\n\n# 輸出限制 (Output Constraints)\n- 全程使用繁體中文。\n- 拒絕輸出「希望這對您有幫助」、「總結來說」等廢話結尾。產出完畢即停止。\n", "02_meeting_action_extractor.yaml": "﻿name: meeting_action_extractor\ndescription: 將口語化或零散的飯店會議筆記，結構化解析為決策摘要、跨部門行動矩陣（Table）及高風險警示。\ntriggers:\n  - 會議記錄\n  - 早會整理\n  - 跨部門協調\n  - 交辦事項\ninputs:\n  raw_text:\n    type: string\n    description: 原始會議速記、口述摘要或語音轉文字內容。\n    required: true\n\nworkflow:\n  1. 資訊過濾：剔除閒聊與重複資訊，擷取核心決策點。\n  2. 責任歸屬拆解：將待辦事項對齊到標準飯店部門（前檯 Front Office / 房務 Housekeeping / 餐飲 F&B / 工務 Engineering / 財務 Finance / 業務 Sales）。\n  3. 時間線與風險評估：標註具體截止日期；若未提供具體時間，標記為「待確認」並列入追蹤。\n  4. 格式化輸出：產生決策重點與標準 Markdown 表格。\n\noutput_template: |\n  **📋 會議決策核心**\n  * [列出 1-3 點核心決策]\n\n  **🎯 跨部門行動矩陣**\n  | 事項編號 | 交辦事項 / 任務內容 | 負責部門 | 主責人員 | 完成期限 | 優先級 |\n  | :--- | :--- | :--- | :--- | :--- | :--- |\n  | 1 | [任務簡述] | [部門] | [姓名/職稱] | [YYYY-MM-DD] | 高/中/低 |\n\n  **⚠️ 潛在風險與待確認事項**\n  * [列出資訊不明確或跨部門卡點項目]\n", "03_hotel_milestone_tracker.yaml": "﻿name: hotel_milestone_tracker\ndescription: 追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點，輸出進度報告並警示延誤風險。\ntriggers:\n  - 籌備進度\n  - 華邑酒店進度\n  - 工程驗收\n  - 採購追蹤\ninputs:\n  project_name:\n    type: string\n    description: 專案名稱（預設：華邑酒店籌備專案）。\n    default: \"華邑酒店籌備專案\"\n  update_notes:\n    type: string\n    description: 最新現場巡查紀錄、廠商反饋或進度更新。\n    required: true\n\nworkflow:\n  1. 里程碑分類：將更新歸類至四大模組（1. 現場硬體/工務驗收 2. 營運物料採購 3. 證照與法規驗收 4. 人員培訓與試營運）。\n  2. 延誤與瓶頸識別：比對關鍵路徑（Critical Path），偵測是否會影響預定開幕/試營運日期。\n  3. 行動建議產出：針對卡點提供 1-2 個替代方案或需向上層呈報裁決的具體事項。\n\noutput_template: |\n  **🏨 【{{project_name}}】籌備進度看板**\n  * **當前狀態評估：** [正常推進 / 輕度延遲 / 嚴重卡點]\n  * **本期完成節點：** [列出已完成事項]\n\n  **🚧 關鍵路徑追蹤表**\n  | 籌備模組 | 當前關鍵任務 | 廠商/負責窗口 | 預定驗收日 | 狀態 | 風險評估 |\n  | :--- | :--- | :--- | :--- | :--- | :--- |\n  | 工務驗收 | [如：大廳地毯樣式確認] | [廠商/工務] | [YYYY-MM-DD] | 進行中 | [影響試營運/低] |\n\n  **🚨 需高管裁決事項 (Action Required)**\n  * [列出需鶴仁或總經理拍板的決策點]\n", "04_morning_briefing_tracker.md": "﻿# 定時 Skill：晨間營運摘要（morning-briefing-tracker）\n\n- **觸發**：Cron 每日 08:00｜手動關鍵詞：`晨報、今日早報、晨會準備、早安簡報`\n- **聚合**：未結案行動清單（今日到期/逾期）＋華邑籌備當週驗收節點＋昨日營運數據（Occ%/ADR/RevPAR）＋早會需高管確認事項\n- **Cron 配置**：\n\n```json\n{\n  \"name\": \"Daily Hotel Morning Briefing\",\n  \"schedule\": \"0 8 * * *\",\n  \"timezone\": \"Asia/Taipei\",\n  \"skill\": \"morning-briefing-tracker\",\n  \"prompt\": \"請整合今日日期、當前所有未結案跨部門待辦及華邑酒店籌備最新進度，產出今日晨間營運摘要與重點提醒推播。\"\n}\n```\n\n- **輸出模板**：☀️ 晨間營運與籌備簡報 → 🔥 Top Priorities（P0 卡點 1-2 項）→ 🏨 華邑關鍵節點＋風險警示 → 📋 跨部門待追蹤清單（表格）→ 💡 早會提示\n\n---\n", "05_evening_settlement_tracker.md": "﻿# 定時 Skill：晚間營運結算（evening-settlement-tracker）\n\n- **觸發**：Cron 每日 22:30 或 23:00（夜審前／值班經理交班）｜手動關鍵詞：`晚報、今日營收、夜班交接、晚間結算`\n- **聚合四維度**：當日核心營收（Occ%/ADR/RevPAR＋餐飲宴會）＋現場異常與重大客訴（免單/升等補償、設施故障）＋夜間交班巡檢（遲到 VIP、MOD 注意事項）＋明日營運預警（預估住房率、大團進出、人力佈署）\n- **Cron 配置**：\n\n```json\n{\n  \"name\": \"Daily Hotel Evening Settlement\",\n  \"schedule\": \"30 22 * * *\",\n  \"timezone\": \"Asia/Taipei\",\n  \"skill\": \"evening-settlement-tracker\",\n  \"prompt\": \"請整合今日各部門回報之營運數據（住房率、ADR、RevPAR、餐飲營收）、客訴與現場異常紀錄，產出晚間營運結算與夜班交班簡報。\"\n}\n```\n\n- **輸出模板**：🌙 晚間營運結算與交班簡報 → 📊 當日核心營收指標（對比預算標註超標/落後）→ ⚠️ 現場異常與客訴 → 🛎️ 夜班交班要點（VIP/巡檢）→ 🔮 明日營運預警\n\n> 晨間＋晚間形成完整閉環：早上主動準備決策視角，晚間結算當日績效與風險，搭配會議速記與籌備追蹤技能全面解放行政負擔。\n\n---\n", "06_安裝步驟一頁紙.md": "﻿# Hermes Agent 安裝步驟一頁紙（Windows 筆電）\n\n> 現場教學用｜時間約 20–30 分鐘｜對象：鶴仁的筆電\n\n## 前置需求\n- Windows 10/11 筆電（需管理員權限）\n- 安裝 **git-bash**（Git for Windows 內建）— https://git-scm.com/download/win\n- 一個 LLM API Key（現場由山姆大叔提供 OpenCode / DeepSeek / OpenRouter 擇一即可）\n\n## Step 1：安裝 Hermes Agent（git-bash 內執行）\n```bash\ncurl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash\n```\n> 安裝程式會自動處理 uv、Python、虛擬環境與啟動器。完成後重新開啟 git-bash。\n\n## Step 2：初次設定\n```bash\nhermes setup        # 設定模型與供應商（選 API provider 並貼 Key）\nhermes              # 啟動互動對話（首次會引導）\n```\n- `hermes model`：之後隨時切換模型\n- `hermes doctor`：健康檢查（確認安裝沒問題）\n\n## Step 3：放入角色設定（SOUL.md）\n- 把素材包內的 `01_SOUL.md` 內容存入專案資料夾的 `AGENTS.md`（或依現場版本設定導入方式）\n- 作用：讓 Hermes 預設以「星級飯店營運特助」身份回應鶴仁\n\n## Step 4：放入 Skills（4 個）\n- 把 `02`〜`05` 的 skill 檔放進 Hermes skills 目錄：\n  - 本機：`~/.hermes/skills/`（或 Desktop 版本依實際路徑）\n- 存放後 Hermes 即可自動偵測、觸發使用\n\n## Step 5：定時任務（Cron）\n- 依 `04`、`05` 內附的 JSON 建立每日 08:00 晨間簡報、22:30 晚間結算（現場示範）\n\n## Step 6：Obsidian 第二大腦（Google 雲端磁碟同步）\n1. 安裝 Obsidian：https://obsidian.md/download\n2. 建立 vault 資料夾，放在 Google 雲端磁碟同步資料夾內（如 `G:/我的雲端硬碟/Obsidian/`）\n3. Obsidian 設定 → 關閉 vault 內自動保留設定，直接以檔案夾同步方式運作\n4. 從此筆記、日誌、知識庫都存 vault → Google Drive 自動同步 → 手機/換機皆可取用\n\n## 驗收清單（全部打勾＝安裝成功）\n- [ ] `hermes` 可啟動且能正常對話\n- [ ] 角色設定（SOUL）生效——問「你是誰」會回飯店特助身份\n- [ ] 任一 skill 可被觸發（如貼一段會議筆記 → 產出行動矩陣）\n- [ ] Obsidian vault 已同步 Google 雲端磁碟（手機 App 看得到）\n", "07_現場教學流程.md": "﻿# AI 現場教學流程（2026-08-19 19:00–22:00 @ Block & Cafe）\n\n> 太原路50號2樓（前身町咖啡）｜對象：鶴仁｜助教：山姆大叔\n\n## 時間配置（3 小時）\n\n| 時間 | 單元 | 內容 | 素材 |\n|---|---|---|---|\n| 19:00–19:15 | 開場 | 說明 Hermes Agent 能幫鶴仁做什麼（對照他現有十幾個 ChatGPT 對話串） | 本包 README |\n| 19:15–20:15 | 實作① | 筆電安裝 Hermes Agent＋模型路由設定 | 06_安裝步驟一頁紙 |\n| 20:15–21:15 | 實作② | Obsidian vault 建立＋Google 雲端磁碟同步 | 06_安裝步驟一頁紙 Step 6 |\n| 21:15–22:00 | 實作③＋收尾 | 匯入 SOUL.md＋4 個 skill＋示範 Cron；Q&A | 01–05 素材檔 |\n| — | 會後 | 手機綁定（Telegram/通訊端）、雲端搬遷選項說明 | — |\n\n## 現場示範腳本（實作③）\n1. 貼上 `01_SOUL.md` → 問「你是誰」驗證身份生效\n2. 貼一段範例會議筆記 → 觸發 `02_meeting_action_extractor` → 產出行動矩陣\n3. 丟一條「3 樓客房天花板驗收沒過，廠商延後 5 天交場」→ 觸發 `03_hotel_milestone_tracker`\n4. 設定 Cron（04/05 JSON）→ 說明明早 08:00 會自動推播晨間簡報\n\n## 攜帶清單（山姆大叔）\n- [ ] 筆電＋充電器（鶴仁的）\n- [ ] 本教學素材包（已放 Google 雲端硬碟，手機可存取）\n- [ ] LLM API Key（OpenCode 或既有 provider）\n- [ ] 網路：Block & Cafe 有 Wi-Fi（筆記已確認）\n", "08_Google日曆匯入.md": "﻿# Google 日曆事件匯入\n\n## 事件資訊\n- **標題**：AI 現場教學（鶴仁導入 Hermes Agent）\n- **時間**：2026-08-19（三）19:00–22:00（Asia/Taipei）\n- **地點**：Block & Cafe，台北市太原路50號2樓（前身町咖啡）\n- **提醒**：提前 2 小時\n\n## 一鍵匯入連結（手機/電腦點開 → 按儲存）\nhttps://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%88%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%EF%BC%89&dates=20260819T110000Z%2F20260819T140000Z&details=%E9%80%99%E6%98%AF%E5%B9%AB%E5%8F%8B%E4%BA%BA%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%20%E7%9A%84%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%8C%E4%B8%BB%E9%A1%8C%E5%90%AB%E5%AE%89%E8%A3%9D%20Hermes%20Agent%E3%80%81Obsidian%20%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%85%A6%E3%80%81Google%20%E9%9B%B2%E7%AB%AF%E7%A3%81%E7%A2%9F%E5%90%8C%E6%AD%A5%E3%80%82&location=Block%20%26%20Cafe%EF%BC%8C%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%AA%E5%8E%9F%E8%B7%AF50%E8%99%9F2%E6%A8%93%EF%BC%88%E5%89%8D%E8%BA%AB%E7%94%BA%E5%92%96%E5%95%A1%EF%BC%89&ctz=Asia%2FTaipei\n\n## .ics 檔\n`Obsidian/00_Inbox/AI_現場教學_鶴仁導入_Hermes_Agent.ics`（已內建提前 2 小時提醒）\n"};
-
-    // Copy helper
+    // Copy code helper
     function copyCode(btn, text) {
       navigator.clipboard.writeText(text).then(() => {
-        const originalText = btn.innerText;
-        btn.innerText = "✓ 已複製！";
+        const origText = btn.innerText;
+        btn.innerText = "已複製！";
         btn.classList.add("copied");
+        showToast("已成功複製到剪貼簿");
         setTimeout(() => {
-          btn.innerText = originalText;
+          btn.innerText = origText;
           btn.classList.remove("copied");
         }, 2000);
+      }).catch(err => {
+        console.error("Copy failed", err);
+        showToast("複製失敗，請手動複製");
       });
     }
 
-    function copySoulFull() {
-      const text = rawFilesData["01_SOUL.md"];
-      navigator.clipboard.writeText(text).then(() => {
-        alert("已成功複製 01_SOUL.md 角色設定全文！");
-      });
+    // Toast helper
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      const toastMsg = document.getElementById("toastMsg");
+      toastMsg.innerText = msg;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
     }
 
-    function copyRawFile(key) {
-      let mapKey = "";
-      if (key === '00_README') mapKey = '00_README.md';
-      else if (key === '01_SOUL') mapKey = '01_SOUL.md';
-      else if (key === '02_meeting') mapKey = '02_meeting_action_extractor.yaml';
-      else if (key === '03_hotel') mapKey = '03_hotel_milestone_tracker.yaml';
-      else if (key === '04_morning') mapKey = '04_morning_briefing_tracker.md';
-      else if (key === '05_evening') mapKey = '05_evening_settlement_tracker.md';
-      else if (key === '06_install') mapKey = '06_安裝步驟一頁紙.md';
-      else if (key === '07_schedule') mapKey = '07_現場教學流程.md';
-      else if (key === '08_calendar') mapKey = '08_Google日曆匯入.md';
-
-      if (mapKey && rawFilesData[mapKey]) {
-        navigator.clipboard.writeText(rawFilesData[mapKey]).then(() => {
-          alert(`已複製 ${mapKey} 內容！`);
-        });
-      }
+    // Mobile nav toggle
+    function toggleMobileNav() {
+      const links = document.getElementById("navLinks");
+      links.classList.toggle("mobile-open");
     }
 
-    // Tab switcher
+    // Switch Skill Tab
     function switchSkillTab(idx) {
-      const btns = document.querySelectorAll(".tab-btn");
-      const contents = document.querySelectorAll(".tab-content");
-      btns.forEach((b, i) => {
-        if (i === idx) b.classList.add("active");
-        else b.classList.remove("active");
+      const buttons = document.querySelectorAll("#skills .tab-btn");
+      const panes = [
+        document.getElementById("skillPane0"),
+        document.getElementById("skillPane1"),
+        document.getElementById("skillPane2"),
+        document.getElementById("skillPane3")
+      ];
+
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle("active", i === idx);
       });
-      contents.forEach((c, i) => {
-        if (i === idx) c.classList.add("active");
-        else c.classList.remove("active");
+
+      panes.forEach((pane, i) => {
+        if (pane) pane.classList.toggle("active", i === idx);
       });
     }
 
-    // Checklist logic with localStorage
-    const totalChecks = 10;
+    // Switch Tool Tab (ChatGPT export tools)
+    function switchToolTab(idx) {
+      const buttons = document.querySelectorAll("#chatgpt-export .tab-btn");
+      const panes = [
+        document.getElementById("toolPane0"),
+        document.getElementById("toolPane1"),
+        document.getElementById("toolPane2"),
+        document.getElementById("toolPane3")
+      ];
 
-    function toggleCheck(idx) {
-      const chk = document.getElementById("chk-" + idx);
-      chk.checked = !chk.checked;
-      updateProgress();
+      buttons.forEach((btn, i) => {
+        btn.classList.toggle("active", i === idx);
+      });
+
+      panes.forEach((pane, i) => {
+        if (pane) pane.classList.toggle("active", i === idx);
+      });
     }
 
-    function updateProgress() {
-      let checkedCount = 0;
-      const state = [];
-      for (let i = 0; i < totalChecks; i++) {
-        const chk = document.getElementById("chk-" + i);
-        const parent = chk.closest(".check-item");
-        if (chk.checked) {
-          checkedCount++;
-          parent.classList.add("completed");
-          state.push(true);
-        } else {
-          parent.classList.remove("completed");
-          state.push(false);
+    // Interactive Checklist Storage & State
+    const STORAGE_KEY = "hermes_teaching_checklist_20260819";
+    let checkedState = Array(10).fill(false);
+
+    function initChecklist() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          checkedState = JSON.parse(saved);
         }
+      } catch (e) {
+        console.error(e);
       }
+      renderChecklistUI();
+    }
 
-      const pct = Math.round((checkedCount / totalChecks) * 100);
-      document.getElementById("progress-pct").innerText = pct + "% (" + checkedCount + "/" + totalChecks + ")";
-      document.getElementById("progress-bar-fill").style.width = pct + "%";
-      document.getElementById("nav-check-badge").innerText = checkedCount + "/" + totalChecks;
+    function renderChecklistUI() {
+      const items = document.querySelectorAll(".check-item");
+      let count = 0;
+      items.forEach((item, idx) => {
+        const isChecked = !!checkedState[idx];
+        item.classList.toggle("checked", isChecked);
+        const icon = item.querySelector(".custom-checkbox svg");
+        if (icon) icon.style.display = isChecked ? "block" : "none";
+        if (isChecked) count++;
+      });
 
-      localStorage.setItem("hermes_teaching_checklist", JSON.stringify(state));
+      const total = items.length;
+      const pct = Math.round((count / total) * 100);
+      document.getElementById("progressPercent").innerText = pct + "%";
+      document.getElementById("progressFill").style.width = pct + "%";
+    }
+
+    function toggleCheck(el, idx) {
+      checkedState[idx] = !checkedState[idx];
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedState));
+      } catch (e) {}
+      renderChecklistUI();
+    }
+
+    function checkAllItems() {
+      checkedState = Array(10).fill(true);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedState));
+      } catch (e) {}
+      renderChecklistUI();
+      showToast("已將所有驗收項目標記為完成！");
     }
 
     function resetChecklist() {
-      if (confirm("確定要重設所有驗收勾選狀態嗎？")) {
-        for (let i = 0; i < totalChecks; i++) {
-          document.getElementById("chk-" + i).checked = false;
-        }
-        updateProgress();
-      }
+      checkedState = Array(10).fill(false);
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedState));
+      } catch (e) {}
+      renderChecklistUI();
+      showToast("驗收清單已重設。");
     }
 
-    function checkAllList() {
-      for (let i = 0; i < totalChecks; i++) {
-        document.getElementById("chk-" + i).checked = true;
-      }
-      updateProgress();
-    }
-
-    // Load saved checklist state
-    window.addEventListener("DOMContentLoaded", () => {
-      const saved = localStorage.getItem("hermes_teaching_checklist");
-      if (saved) {
-        try {
-          const state = JSON.parse(saved);
-          state.forEach((val, i) => {
-            const el = document.getElementById("chk-" + i);
-            if (el) el.checked = !!val;
-          });
-        } catch (e) {}
-      }
-      updateProgress();
+    document.addEventListener("DOMContentLoaded", () => {
+      initChecklist();
     });
-
-    function toggleMobileMenu() {
-      const navLinks = document.querySelector(".nav-links");
-      if (navLinks.style.display === "flex") {
-        navLinks.style.display = "none";
-      } else {
-        navLinks.style.display = "flex";
-        navLinks.style.flexDirection = "column";
-        navLinks.style.position = "absolute";
-        navLinks.style.top = "68px";
-        navLinks.style.left = "0";
-        navLinks.style.right = "0";
-        navLinks.style.background = "#0e1424";
-        navLinks.style.padding = "20px";
-        navLinks.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
-      }
-    }
   </script>
 </body>
 </html>
