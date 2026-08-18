@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hermes Agent 現場導入教學手冊 ｜ 鶴仁專屬飯店營運特助</title>
+  <meta name="description" content="2026-08-19 鶴仁專屬 Hermes Agent 現場導入教學手冊：星級飯店營運特助、Obsidian 第二大腦、Google 雲端同步與四大客製化技能。">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-body: #070a11;
+      --bg-surface: #0e1424;
+      --bg-card: #141e34;
+      --bg-card-alt: #18243e;
+      --bg-card-hover: #1d2b4a;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-medium: rgba(255, 255, 255, 0.14);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --text-inverse: #070a11;
+      
+      --accent-cyan: #38bdf8;
+      --accent-blue: #60a5fa;
+      --accent-indigo: #818cf8;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 25px -5px rgba(56, 189, 248, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-primary);
+      font-family: 'Noto Sans TC', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+      color: var(--text-primary);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    code, pre {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    a:hover {
+      color: #7dd3fc;
+      text-decoration: underline;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Header Nav */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(14, 20, 36, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-action-btn {
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      padding: 8px 16px !important;
+      border-radius: var(--radius-sm) !important;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-action-btn:hover {
+      background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+      transform: translateY(-1px);
+    }
+
+    /* Mobile Nav Toggle */
+    .mobile-menu-btn {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px;
+      position: relative;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.18rem;
+      color: var(--text-secondary);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    /* Event Card */
+    .event-card {
+      background: linear-gradient(145deg, #111a2e 0%, #0d1527 100%);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 50px;
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent-cyan), var(--accent-indigo));
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .event-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .event-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .event-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .event-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: #0284c7;
+      color: #ffffff;
+    }
+    .btn-primary:hover {
+      background: #0369a1;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .btn-emerald {
+      background: #059669;
+      color: #ffffff;
+    }
+    .btn-emerald:hover {
+      background: #047857;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 50px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .section-header {
+      margin-bottom: 32px;
+    }
+
+    .section-badge {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 780px;
+    }
+
+    /* Card System */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-medium);
+      background: var(--bg-card-alt);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    /* Architecture Cards */
+    .arch-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .arch-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+
+    .arch-card h4 {
+      font-size: 1.15rem;
+      color: #ffffff;
+    }
+
+    .arch-card p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .arch-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    .tag-pill {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-secondary);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Schedule Timeline */
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .timeline-table th {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .timeline-table td {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.95rem;
+      vertical-align: middle;
+    }
+
+    .timeline-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .timeline-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .time-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.1);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    /* Code Blocks with Copy */
+    .code-container {
+      position: relative;
+      background: #090d16;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    .code-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #0d1320;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .code-lang {
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-secondary);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .copy-btn.copied {
+      background: #059669;
+      color: #ffffff;
+      border-color: #10b981;
+    }
+
+    pre code {
+      display: block;
+      padding: 16px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: #e2e8f0;
+      overflow-x: auto;
+    }
+
+    /* Steps cards */
+    .step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 1.8rem;
+      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      color: rgba(255, 255, 255, 0.07);
+    }
+
+    .step-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-title-badge {
+      background: var(--accent-cyan);
+      color: #000000;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Tab controls for skills */
+    .tab-nav {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 12px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Interactive Checklist */
+    .checklist-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+    }
+
+    .progress-wrapper {
+      margin-bottom: 24px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .progress-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .progress-pct {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+      border-radius: 9999px;
+      transition: width 0.4s ease;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid transparent;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .check-item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--border-subtle);
+    }
+
+    .check-item.completed {
+      background: rgba(16, 185, 129, 0.08);
+      border-color: rgba(16, 185, 129, 0.25);
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      accent-color: var(--accent-emerald);
+      cursor: pointer;
+    }
+
+    .check-item-text {
+      flex: 1;
+    }
+
+    .check-item-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .check-item.completed .check-item-title {
+      color: #a7f3d0;
+      text-decoration: line-through;
+      opacity: 0.85;
+    }
+
+    .check-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Live Demo Output Preview Box */
+    .demo-box {
+      background: #090e18;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .demo-header {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Table styles in content */
+    .styled-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 0.88rem;
+    }
+
+    .styled-table th {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 12px;
+      text-align: left;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .styled-table td {
+      padding: 10px 12px;
+      border: 1px solid var(--border-subtle);
+      color: #e2e8f0;
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--border-subtle);
+      background: #060910;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-align: center;
+    }
+
+    /* Mobile Bottom Quick Actions */
+    .mobile-bottom-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(14, 20, 36, 0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-medium);
+      padding: 10px 16px;
+      z-index: 99;
+      justify-content: space-around;
+    }
+
+    .mobile-bar-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+    .mobile-bar-btn.active, .mobile-bar-btn:hover {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    @media (max-width: 868px) {
+      .hero-title { font-size: 2.1rem; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .mobile-bottom-bar { display: flex; }
+      .event-card { padding: 22px; }
+      section { padding: 40px 0; }
+      body { padding-bottom: 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span>⚡ Hermes Agent</span>
+        <span class="brand-badge">鶴仁導入現場</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#event">現場資訊</a></li>
+        <li><a href="#arch">架構方針</a></li>
+        <li><a href="#schedule">現場流程</a></li>
+        <li><a href="#steps">安裝 6 步驟</a></li>
+        <li><a href="#soul">SOUL 設定</a></li>
+        <li><a href="#skills">4 大 Skills</a></li>
+        <li><a href="#checklist">驗收清單</a></li>
+      </ul>
+      <a href="#checklist" class="nav-action-btn">
+        <span>實作驗收</span>
+        <span id="nav-check-badge">0/10</span>
+      </a>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="選單">☰</button>
+    </div>
+  </nav>
+
+  <!-- Main Hero -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero-tag">
+        <span>● 2026-08-19（三）現場專用輔助頁面</span>
+      </div>
+      <h1 class="hero-title">Hermes Agent 現場導入教學手冊</h1>
+      <p class="hero-subtitle">
+        為星級飯店營運主管「陳鶴仁」量身打造的專屬 AI 數位特助與終身第二大腦。<br>
+        從本機安裝、Obsidian 雙向記憶庫、Google 雲端同步到四大營運技能，全面終結行政摩擦力。
+      </p>
+
+      <!-- Event Info Card -->
+      <div class="event-card" id="event">
+        <div class="event-grid">
+          <div class="event-item">
+            <span class="event-label">📅 教學時間</span>
+            <span class="event-val">2026-08-19（三）19:00 – 22:00</span>
+            <span style="font-size: 0.8rem; color: var(--accent-emerald);">準時開課｜預計 3 小時</span>
+          </div>
+          <div class="event-item">
+            <span class="event-label">📍 教學地點</span>
+            <span class="event-val">Block & Cafe</span>
+            <span style="font-size: 0.85rem; color: var(--text-secondary);">台北市太原路50號2樓（前身町咖啡）</span>
+          </div>
+          <div class="event-item">
+            <span class="event-label">👥 參與成員</span>
+            <span class="event-val">鶴仁（學員）× 山姆大叔（助教）</span>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">飯店營運管理職導入實戰</span>
+          </div>
+          <div class="event-item">
+            <span class="event-label">📶 現場環境與設備</span>
+            <span class="event-val">Wi-Fi 備妥 ｜ 筆電＋充電器</span>
+            <span style="font-size: 0.8rem; color: var(--accent-amber);">需 Win10/11 管理員權限</span>
+          </div>
+        </div>
+
+        <div class="event-actions">
+          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%88%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%EF%BC%89&dates=20260819T110000Z%2F20260819T140000Z&details=%E9%80%99%E6%98%AF%E5%B9%AB%E5%8F%8B%E4%BA%BA%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%20%E7%9A%84%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%8C%E4%B8%BB%E9%A1%8C%E5%90%AB%E5%AE%89%E8%A3%9D%20Hermes%20Agent%E3%80%81Obsidian%20%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%85%A6%E3%80%81Google%20%E9%9B%B2%E7%AB%AF%E7%A3%81%E7%A2%9F%E5%90%8C%E6%AD%A5%E3%80%82&location=Block%20%26%20Cafe%EF%BC%8C%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%AA%E5%8E%9F%E8%B7%AF50%E8%99%9F2%E6%A8%93%EF%BC%88%E5%89%8D%E8%BA%AB%E7%94%BA%E5%92%96%E5%95%A1%EF%BC%89&ctz=Asia%2FTaipei" target="_blank" class="btn btn-primary">
+            📅 一鍵加入 Google 日曆 (提前2hr提醒)
+          </a>
+          <a href="https://maps.google.com/?q=台北市大同區太原路50號2樓" target="_blank" class="btn btn-secondary">
+            🗺️ Google 地圖導航
+          </a>
+          <a href="#steps" class="btn btn-emerald">
+            🚀 直接看安裝 6 步驟
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section: Architecture & Strategy -->
+  <section id="arch">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">ARCHITECTURE & DESIGN</span>
+        <h2 class="section-title">架構方針：為什麼是 Hermes ＋ Obsidian？</h2>
+        <p class="section-desc">
+          打破傳統 ChatGPT「多對話串混亂、跨對話遺忘、無法自動化」的困境，建立三層解耦、永久可搬遷的個人數位特助體系。
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="arch-card">
+          <div class="arch-icon">🧠</div>
+          <h4>1. 執行大腦 (Hermes)</h4>
+          <p>安裝於鶴仁本機筆電，支援隨時切換底層大模型（DeepSeek / Claude / OpenRouter），具備自主工具調用、長程記憶與 Cron 定時推播能力。</p>
+          <div class="arch-tags">
+            <span class="tag-pill">本機運行</span>
+            <span class="tag-pill">模型自由切換</span>
+            <span class="tag-pill">主動排程</span>
+          </div>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-icon">💎</div>
+          <h4>2. 記憶中樞 (Obsidian)</h4>
+          <p>純 Markdown 本地檔案結構，作為鶴仁的「數位第二大腦」。所有飯店日誌、華邑酒店籌備進度、會議紀錄皆為開放格式，永不被廠商綁架。</p>
+          <div class="arch-tags">
+            <span class="tag-pill">純 Markdown</span>
+            <span class="tag-pill">雙向連結</span>
+            <span class="tag-pill">永不被鎖定</span>
+          </div>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-icon">☁️</div>
+          <h4>3. 雲端同步 (Google Drive)</h4>
+          <p>Vault 資料夾直接掛載 Google 雲端磁碟。筆電修改、手機即時同步檢視，隨時隨地掌握現場工務與營運狀況。</p>
+          <div class="arch-tags">
+            <span class="tag-pill">自動備份</span>
+            <span class="tag-pill">手機隨身查閱</span>
+            <span class="tag-pill">無痛漫遊</span>
+          </div>
+        </div>
+
+        <div class="arch-card">
+          <div class="arch-icon">🔄</div>
+          <h4>4. 極致可搬遷性</h4>
+          <p>設定檔 (SOUL.md) 與技能 (Skills YAML) 完全模組化。未來即使換電腦、換雲端 VPS 或切換其他 Agent 引擎，全套設定無痛平移。</p>
+          <div class="arch-tags">
+            <span class="tag-pill">設定與資料分離</span>
+            <span class="tag-pill">標準化配置</span>
+            <span class="tag-pill">終身資產</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Schedule & Demo Script -->
+  <section id="schedule">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">TIMELINE & LIVE DEMO</span>
+        <h2 class="section-title">3 小時現場教學流程與實作腳本</h2>
+        <p class="section-desc">緊湊實戰節奏，以手把手實作為核心，確保當晚 22:00 前完成所有環境建置與測試驗收。</p>
+      </div>
+
+      <div style="overflow-x: auto; margin-bottom: 36px;">
+        <table class="timeline-table">
+          <thead>
+            <tr>
+              <th style="width: 140px;">時間區段</th>
+              <th style="width: 120px;">單元名稱</th>
+              <th>核心教學內容與目標</th>
+              <th style="width: 150px;">對應素材</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="time-badge">19:00 – 19:15</span></td>
+              <td><strong>開場對焦</strong></td>
+              <td>說明 Hermes Agent 能幫鶴仁解決什麼痛點（對照他現有十幾個混亂 ChatGPT 對話串，展示特助模式與自主記憶）。</td>
+              <td><code>00_README.md</code></td>
+            </tr>
+            <tr>
+              <td><span class="time-badge">19:15 – 20:15</span></td>
+              <td><strong>實作 ①</strong></td>
+              <td><strong>筆電安裝 Hermes Agent</strong>＋Git Bash 環境＋API Key 配置與模型路由（<code>hermes doctor</code> 檢查確認）。</td>
+              <td><code>06_安裝步驟一頁紙</code></td>
+            </tr>
+            <tr>
+              <td><span class="time-badge">20:15 – 21:15</span></td>
+              <td><strong>實作 ②</strong></td>
+              <td><strong>Obsidian 第二大腦建置</strong>＋建立 Vault＋綁定 Google 雲端磁碟自動同步＋手機端同步檢視測試。</td>
+              <td><code>06_安裝步驟一頁紙 Step 6</code></td>
+            </tr>
+            <tr>
+              <td><span class="time-badge">21:15 – 22:00</span></td>
+              <td><strong>實作 ③ & 收尾</strong></td>
+              <td><strong>匯入 SOUL.md</strong>＋部署 4 個營運專屬 Skills＋示範 Cron 晨晚報推播＋全功能現場驗收與 Q&A。</td>
+              <td><code>01–05 素材檔</code></td>
+            </tr>
+            <tr>
+              <td><span class="time-badge" style="color: var(--text-muted); background: rgba(255,255,255,0.05);">會後延伸</span></td>
+              <td><strong>進階延伸</strong></td>
+              <td>手機端通訊軟體綁定（Telegram/Line）、雲端 VPS 常駐運行選項說明。</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Live Demo Scenarios -->
+      <h3 style="font-size: 1.35rem; margin-bottom: 16px; color: #ffffff;">🎬 現場實作示範腳本（實作③ 四大檢驗點）</h3>
+      <div class="grid-2">
+        <div class="card">
+          <div style="font-size: 0.82rem; color: var(--accent-cyan); font-weight: 700; margin-bottom: 6px;">DEMO 1：特助身份注入驗證</div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
+            在對話框輸入：<code style="color: #ffffff;">「你是誰？你的主要職責是什麼？」</code>
+          </p>
+          <div class="demo-box">
+            <div class="demo-header">🎯 預期特助回應</div>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5;">
+              「我是星級飯店營運與新案籌備高階特助，專屬服務於鶴仁。我的首要任務是降低您的行政摩擦力，將會議紀錄、現場巡視與數據轉化為決策行動清單與公文呈報。」
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 0.82rem; color: var(--accent-emerald); font-weight: 700; margin-bottom: 6px;">DEMO 2：早會速記 → 跨部門行動矩陣</div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
+            貼上一段口語早會：「前檯反應週末大團退房卡在發票，房務說3樓備品不足，工務下午要修電梯...」
+          </p>
+          <div class="demo-box">
+            <div class="demo-header">🎯 預期產出：行動矩陣表格</div>
+            <p style="font-size: 0.85rem; color: #cbd5e1;">自動解析為：前檯 / 房務 / 工務標準部門，標註負責人、完成期限與優先級（P0/P1）。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 0.82rem; color: var(--accent-amber); font-weight: 700; margin-bottom: 6px;">DEMO 3：華邑酒店籌備關鍵路徑追蹤</div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
+            輸入：「3樓客房天花板驗收沒過，廠商延後 5 天交場，地毯廠商也說卡關。」
+          </p>
+          <div class="demo-box">
+            <div class="demo-header">🎯 預期產出：延誤風險警示</div>
+            <p style="font-size: 0.85rem; color: #cbd5e1;">自動比對關鍵路徑，輸出延誤警示，並主動列出「需鶴仁/總經理拍板的高管裁決事項」。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size: 0.82rem; color: var(--accent-indigo); font-weight: 700; margin-bottom: 6px;">DEMO 4：定時自動化推播（Cron）</div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 12px;">
+            配置每日 08:00 晨報與 22:30 晚報 Cron 任務，展示全自動無人化營運摘要。
+          </p>
+          <div class="demo-box">
+            <div class="demo-header">🎯 預期效果：營運全閉環</div>
+            <p style="font-size: 0.85rem; color: #cbd5e1;">早上主動準備決策視角（Top Priorities），晚上自動結算營收指標（Occ%/ADR）與客訴。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Installation Steps -->
+  <section id="steps">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">STEP-BY-STEP GUIDE</span>
+        <h2 class="section-title">Hermes Agent 安裝步驟一頁紙</h2>
+        <p class="section-desc">Windows 10/11 筆電專用，現場跟著 6 個步驟走，20–30 分鐘搞定全套環境。</p>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <div class="step-title">
+          <span class="step-title-badge">STEP 1</span>
+          <span>安裝 Hermes Agent（在 Git Bash 內執行）</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 10px;">
+          打開 <strong>Git Bash</strong>（若無請先下載安裝 <a href="https://git-scm.com/download/win" target="_blank">Git for Windows</a>），貼上以下指令自動完成 uv、Python 虛擬環境與 Hermes 安裝：
+        </p>
+        <div class="code-container">
+          <div class="code-header">
+            <span class="code-lang">Bash</span>
+            <button class="copy-btn" onclick="copyCode(this, 'curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash')">複製指令</button>
+          </div>
+          <pre><code>curl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash</code></pre>
+        </div>
+        <p style="font-size: 0.85rem; color: var(--accent-emerald);">💡 安裝完成後，請將 Git Bash 視窗關閉並重新打開。</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <div class="step-title">
+          <span class="step-title-badge">STEP 2</span>
+          <span>初次設定與健康檢查</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 10px;">
+          執行 <code>hermes setup</code> 選擇 API 供應商並輸入金鑰，隨後進行對話測試：
+        </p>
+        <div class="code-container">
+          <div class="code-header">
+            <span class="code-lang">Bash</span>
+            <button class="copy-btn" onclick="copyCode(this, 'hermes setup
+hermes doctor
+hermes')">複製指令</button>
+          </div>
+          <pre><code>hermes setup        # 設定模型與供應商（現場由山姆大叔提供 Key）
+hermes doctor       # 健康檢查（確認環境全綠燈 Pass）
+hermes              # 啟動互動對話介面</code></pre>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <div class="step-title">
+          <span class="step-title-badge">STEP 3</span>
+          <span>放入角色設定（SOUL.md）</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary);">
+          把素材包內的 <code>01_SOUL.md</code> 內容複製並存入專案目錄下的 <code>AGENTS.md</code>（或 Hermes 提示詞設定區）。讓 Hermes 從第一次對話就具備星級飯店營運特助思維。
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-number">04</div>
+        <div class="step-title">
+          <span class="step-title-badge">STEP 4</span>
+          <span>放入 4 個客製化 Skills</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 10px;">
+          將素材包中的 <code>02</code> 至 <code>05</code> 檔案放入 Hermes 的技能資料夾：
+        </p>
+        <div class="code-container">
+          <div class="code-header">
+            <span class="code-lang">Path</span>
+            <button class="copy-btn" onclick="copyCode(this, '~/.hermes/skills/')">複製路徑</button>
+          </div>
+          <pre><code>~/.hermes/skills/</code></pre>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-card">
+        <div class="step-number">05</div>
+        <div class="step-title">
+          <span class="step-title-badge">STEP 5</span>
+          <span>配置定時任務（Cron 晨報與晚報）</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-secondary);">
+          依據 <code>04_morning_briefing_tracker.md</code>（每日 08:00）與 <code>05_evening_settlement_tracker.md</code>（每日 22:30）的 JSON 設定排程，實現全自動推播。
+        </p>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step-card">
+        <div class="step-number">06</div>
+        <div class="step-title">
+          <span class="step-title-badge">STEP 6</span>
+          <span>建立 Obsidian 第二大腦 ＋ Google 雲端磁碟同步</span>
+        </div>
+        <div style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.7;">
+          <ol style="padding-left: 20px;">
+            <li>下載安裝 <a href="https://obsidian.md/download" target="_blank">Obsidian</a>。</li>
+            <li>建立新 Vault，路徑直接選擇放在 Google 雲端磁碟同步目錄中（例如 <code>G:/我的雲端硬碟/Obsidian/</code>）。</li>
+            <li>關閉自動保留設定，讓所有檔案以原生 Markdown 隨時隨地被手機 App 與其他程式讀取。</li>
+            <li>完成「本機處理 ➔ 雲端備份 ➔ 手機隨行」的完整閉環。</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: SOUL.md -->
+  <section id="soul">
+    <div class="container">
+      <div class="section-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <span class="section-badge">SYSTEM PROMPT & PERSONA</span>
+            <h2 class="section-title">01_SOUL.md 角色設定全文</h2>
+            <p class="section-desc">星級飯店營運與新案籌備高階特助專屬設定，匯入即生效。</p>
+          </div>
+          <button class="btn btn-primary" onclick="copySoulFull()">
+            📋 一鍵複製 SOUL 全文
+          </button>
+        </div>
+      </div>
+
+      <div class="card" style="background: #090d16; padding: 28px;">
+        <div id="soul-full-text" style="white-space: pre-wrap; font-size: 0.92rem; line-height: 1.7; color: #e2e8f0; font-family: 'JetBrains Mono', monospace;">﻿# 核心身份 (Identity)
+你是「星級飯店營運與新案籌備高階特助」，專屬服務於飯店管理者陳鶴仁（鶴仁）。你的首要任務是降低管理者的行政摩擦力，將零散的會議紀錄、現場巡視口述與營運數據，自動轉化為結構化的決策資訊、公文與行動清單。
+
+# 核心目標 (Core Objectives)
+1. **資訊降噪與公文結構化：** 將口語化的輸入快速轉譯為符合集團規範的「主管呈報」或「跨部門正式文件」。
+2. **籌備專案追蹤：** 擔任「華邑酒店」等新案籌備的專案管理樞紐，長期記憶各節點（如廠商合約、現場驗收、採購進度），並能主動盤點逾期風險。
+3. **營運數據洞察：** 快速解析飯店營運指標（住房率 Occ%、平均房價 ADR、客房收益 RevPAR、餐飲營收），識別異常波動並提供具體改善建議。
+4. **會議行動轉化：** 從雜亂的討論中提煉結論，並拆解為「部門／負責人／期限」的清晰行動矩陣。
+
+# 行為準則 (Behavioral Guidelines)
+- **極簡高效：** 省去所有客套話、問候與前言，第一句話直接給出核心結論或最終產出物。
+- **產業語境：** 熟練使用飯店業標準術語，並具備前檯、房務、餐飲與工務跨部門協調的實務邏輯。
+- **排版優化：** 考量管理者常透過手機（通訊軟體）閱讀，必須大量使用 Markdown 清單與表格，確保資訊高度可掃描（Scannable）。
+- **主動釐清：** 若鶴仁交辦的任務缺乏關鍵資訊（如：會議負責人未定、籌備時間線缺失），請直接列出 1-3 個簡短的問題向他確認，嚴禁自行捏造事實。
+
+# 預設工作流模式 (Default Workflows)
+偵測到以下任務意圖時，請自動切換對應輸出框架：
+- **[主管回報模式]：** 輸出「背景與現況 -&gt; 核心問題 -&gt; 建議方案 (含 A/B 兩案對比) -&gt; 預期效益與資源需求」。
+- **[會議管理模式]：** 輸出「決策摘要 -&gt; 跨部門待辦清單 (Table 呈現：事項 / 負責部門 / 壓線日期) -&gt; 潛在風險」。
+- **[籌備專案模式]：** 提取歷史對話中的「華邑酒店」進度，對比當前任務，輸出「進度更新 -&gt; 延遲警示 -&gt; 需高管裁決事項」。
+- **[數據決策模式]：** 針對提供的數據，輸出「核心洞察 -&gt; 異常紅燈指標 -&gt; 現場營運微調建議」。
+
+# 輸出限制 (Output Constraints)
+- 全程使用繁體中文。
+- 拒絕輸出「希望這對您有幫助」、「總結來說」等廢話結尾。產出完畢即停止。
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: 4 Custom Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">CUSTOM SKILLS SUITE</span>
+        <h2 class="section-title">4 大飯店營運客製化技能</h2>
+        <p class="section-desc">專為鶴仁的飯店日常管理與新案籌備量身打造，涵蓋速記、專案追蹤與晨晚報定時推播。</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="tab-nav">
+        <button class="tab-btn active" onclick="switchSkillTab(0)">02 会議行動提取 (meeting_action)</button>
+        <button class="tab-btn" onclick="switchSkillTab(1)">03 華邑里程碑追蹤 (hotel_milestone)</button>
+        <button class="tab-btn" onclick="switchSkillTab(2)">04 晨間營運摘要 (08:00 Cron)</button>
+        <button class="tab-btn" onclick="switchSkillTab(3)">05 晚間營運結算 (22:30 Cron)</button>
+      </div>
+
+      <!-- Skill 1 Content -->
+      <div class="tab-content active" id="skill-tab-0">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <h3 style="color: #ffffff;">📋 02_meeting_action_extractor.yaml</h3>
+            <span class="tag-pill" style="color: var(--accent-cyan); border-color: rgba(56,189,248,0.3);">觸發詞：會議記錄、早會整理、跨部門協調、交辦事項</span>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
+            <strong>核心功能：</strong>將口述或零散的早會筆記，過濾閒聊後拆解為標準飯店 6 大部門（前檯 FO / 房務 HK / 餐飲 FB / 工務 ENG / 財務 FIN / 業務 Sales）行動矩陣表格與潛在風險警示。
+          </p>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-lang">YAML Config</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-1').innerText)">複製 YAML</button>
+            </div>
+            <pre><code id="code-skill-1">﻿name: meeting_action_extractor
+description: 將口語化或零散的飯店會議筆記，結構化解析為決策摘要、跨部門行動矩陣（Table）及高風險警示。
+triggers:
+  - 會議記錄
+  - 早會整理
+  - 跨部門協調
+  - 交辦事項
+inputs:
+  raw_text:
+    type: string
+    description: 原始會議速記、口述摘要或語音轉文字內容。
+    required: true
+
+workflow:
+  1. 資訊過濾：剔除閒聊與重複資訊，擷取核心決策點。
+  2. 責任歸屬拆解：將待辦事項對齊到標準飯店部門（前檯 Front Office / 房務 Housekeeping / 餐飲 F&amp;B / 工務 Engineering / 財務 Finance / 業務 Sales）。
+  3. 時間線與風險評估：標註具體截止日期；若未提供具體時間，標記為「待確認」並列入追蹤。
+  4. 格式化輸出：產生決策重點與標準 Markdown 表格。
+
+output_template: |
+  **📋 會議決策核心**
+  * [列出 1-3 點核心決策]
+
+  **🎯 跨部門行動矩陣**
+  | 事項編號 | 交辦事項 / 任務內容 | 負責部門 | 主責人員 | 完成期限 | 優先級 |
+  | :--- | :--- | :--- | :--- | :--- | :--- |
+  | 1 | [任務簡述] | [部門] | [姓名/職稱] | [YYYY-MM-DD] | 高/中/低 |
+
+  **⚠️ 潛在風險與待確認事項**
+  * [列出資訊不明確或跨部門卡點項目]
+</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 2 Content -->
+      <div class="tab-content" id="skill-tab-1">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <h3 style="color: #ffffff;">🏨 03_hotel_milestone_tracker.yaml</h3>
+            <span class="tag-pill" style="color: var(--accent-emerald); border-color: rgba(16,185,129,0.3);">觸發詞：籌備進度、華邑酒店進度、工程驗收、採購追蹤</span>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
+            <strong>核心功能：</strong>追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點。比對關鍵路徑（Critical Path），主動警示試營運延誤風險，並生成「需高管裁決事項」。
+          </p>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-lang">YAML Config</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-2').innerText)">複製 YAML</button>
+            </div>
+            <pre><code id="code-skill-2">﻿name: hotel_milestone_tracker
+description: 追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點，輸出進度報告並警示延誤風險。
+triggers:
+  - 籌備進度
+  - 華邑酒店進度
+  - 工程驗收
+  - 採購追蹤
+inputs:
+  project_name:
+    type: string
+    description: 專案名稱（預設：華邑酒店籌備專案）。
+    default: &quot;華邑酒店籌備專案&quot;
+  update_notes:
+    type: string
+    description: 最新現場巡查紀錄、廠商反饋或進度更新。
+    required: true
+
+workflow:
+  1. 里程碑分類：將更新歸類至四大模組（1. 現場硬體/工務驗收 2. 營運物料採購 3. 證照與法規驗收 4. 人員培訓與試營運）。
+  2. 延誤與瓶頸識別：比對關鍵路徑（Critical Path），偵測是否會影響預定開幕/試營運日期。
+  3. 行動建議產出：針對卡點提供 1-2 個替代方案或需向上層呈報裁決的具體事項。
+
+output_template: |
+  **🏨 【{{project_name}}】籌備進度看板**
+  * **當前狀態評估：** [正常推進 / 輕度延遲 / 嚴重卡點]
+  * **本期完成節點：** [列出已完成事項]
+
+  **🚧 關鍵路徑追蹤表**
+  | 籌備模組 | 當前關鍵任務 | 廠商/負責窗口 | 預定驗收日 | 狀態 | 風險評估 |
+  | :--- | :--- | :--- | :--- | :--- | :--- |
+  | 工務驗收 | [如：大廳地毯樣式確認] | [廠商/工務] | [YYYY-MM-DD] | 進行中 | [影響試營運/低] |
+
+  **🚨 需高管裁決事項 (Action Required)**
+  * [列出需鶴仁或總經理拍板的決策點]
+</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 3 Content -->
+      <div class="tab-content" id="skill-tab-2">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <h3 style="color: #ffffff;">☀️ 04_morning_briefing_tracker.md（晨間營運摘要）</h3>
+            <span class="tag-pill" style="color: var(--accent-amber); border-color: rgba(245,158,11,0.3);">每日 08:00 Cron 自動推播</span>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
+            <strong>核心功能：</strong>每日早上 08:00 主動整合「昨日營運數據（Occ%/ADR/RevPAR）」＋「今日到期與逾期行動清單」＋「華邑籌備當週驗收節點」＋「早會需高管拍板事項」。
+          </p>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-lang">Markdown & Cron JSON</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-3').innerText)">複製內容</button>
+            </div>
+            <pre><code id="code-skill-3">﻿# 定時 Skill：晨間營運摘要（morning-briefing-tracker）
+
+- **觸發**：Cron 每日 08:00｜手動關鍵詞：`晨報、今日早報、晨會準備、早安簡報`
+- **聚合**：未結案行動清單（今日到期/逾期）＋華邑籌備當週驗收節點＋昨日營運數據（Occ%/ADR/RevPAR）＋早會需高管確認事項
+- **Cron 配置**：
+
+```json
+{
+  &quot;name&quot;: &quot;Daily Hotel Morning Briefing&quot;,
+  &quot;schedule&quot;: &quot;0 8 * * *&quot;,
+  &quot;timezone&quot;: &quot;Asia/Taipei&quot;,
+  &quot;skill&quot;: &quot;morning-briefing-tracker&quot;,
+  &quot;prompt&quot;: &quot;請整合今日日期、當前所有未結案跨部門待辦及華邑酒店籌備最新進度，產出今日晨間營運摘要與重點提醒推播。&quot;
+}
+```
+
+- **輸出模板**：☀️ 晨間營運與籌備簡報 → 🔥 Top Priorities（P0 卡點 1-2 項）→ 🏨 華邑關鍵節點＋風險警示 → 📋 跨部門待追蹤清單（表格）→ 💡 早會提示
+
+---
+</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill 4 Content -->
+      <div class="tab-content" id="skill-tab-3">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+            <h3 style="color: #ffffff;">🌙 05_evening_settlement_tracker.md（晚間營運結算）</h3>
+            <span class="tag-pill" style="color: var(--accent-indigo); border-color: rgba(129,140,248,0.3);">每日 22:30 Cron 自動推播</span>
+          </div>
+          <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 14px;">
+            <strong>核心功能：</strong>四維度營運結算：當日核心營收（住房率/ADR/餐飲）＋現場異常與重大客訴＋夜間交班巡檢（VIP/MOD事項）＋明日營運預警（大團進出/人力調配）。
+          </p>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span class="code-lang">Markdown & Cron JSON</span>
+              <button class="copy-btn" onclick="copyCode(this, document.getElementById('code-skill-4').innerText)">複製內容</button>
+            </div>
+            <pre><code id="code-skill-4">﻿# 定時 Skill：晚間營運結算（evening-settlement-tracker）
+
+- **觸發**：Cron 每日 22:30 或 23:00（夜審前／值班經理交班）｜手動關鍵詞：`晚報、今日營收、夜班交接、晚間結算`
+- **聚合四維度**：當日核心營收（Occ%/ADR/RevPAR＋餐飲宴會）＋現場異常與重大客訴（免單/升等補償、設施故障）＋夜間交班巡檢（遲到 VIP、MOD 注意事項）＋明日營運預警（預估住房率、大團進出、人力佈署）
+- **Cron 配置**：
+
+```json
+{
+  &quot;name&quot;: &quot;Daily Hotel Evening Settlement&quot;,
+  &quot;schedule&quot;: &quot;30 22 * * *&quot;,
+  &quot;timezone&quot;: &quot;Asia/Taipei&quot;,
+  &quot;skill&quot;: &quot;evening-settlement-tracker&quot;,
+  &quot;prompt&quot;: &quot;請整合今日各部門回報之營運數據（住房率、ADR、RevPAR、餐飲營收）、客訴與現場異常紀錄，產出晚間營運結算與夜班交班簡報。&quot;
+}
+```
+
+- **輸出模板**：🌙 晚間營運結算與交班簡報 → 📊 當日核心營收指標（對比預算標註超標/落後）→ ⚠️ 現場異常與客訴 → 🛎️ 夜班交班要點（VIP/巡檢）→ 🔮 明日營運預警
+
+&gt; 晨間＋晚間形成完整閉環：早上主動準備決策視角，晚間結算當日績效與風險，搭配會議速記與籌備追蹤技能全面解放行政負擔。
+
+---
+</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Interactive Acceptance Checklist -->
+  <section id="checklist">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">INTERACTIVE CHECKLIST</span>
+        <h2 class="section-title">現場實作驗收清單</h2>
+        <p class="section-desc">現場邊做邊打勾，進度會自動儲存於瀏覽器，全部打勾代表導入大功告成！</p>
+      </div>
+
+      <div class="checklist-card">
+        <div class="progress-wrapper">
+          <div class="progress-header">
+            <span class="progress-text">現場完成進度</span>
+            <span class="progress-pct" id="progress-pct">0%</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+          </div>
+        </div>
+
+        <div id="checklist-items">
+          <div class="check-item" onclick="toggleCheck(0)">
+            <input type="checkbox" id="chk-0" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">1. Git Bash 與 Hermes Agent 順利安裝</div>
+              <div class="check-item-desc">執行 curl 腳本無報錯，環境變數與啟動路徑配置正確。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(1)">
+            <input type="checkbox" id="chk-1" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">2. API Key 配置與 <code>hermes doctor</code> 全綠燈</div>
+              <div class="check-item-desc">金鑰成功載入，診斷指令顯示各項連線正常。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(2)">
+            <input type="checkbox" id="chk-2" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">3. <code>hermes</code> 互動介面首次對話成功</div>
+              <div class="check-item-desc">能正常輸入 prompt 並流暢接收 AI 回應。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(3)">
+            <input type="checkbox" id="chk-3" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">4. SOUL.md 角色設定生效</div>
+              <div class="check-item-desc">問「你是誰？」時，AI 正確回應「星級飯店營運與新案籌備特助」身份。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(4)">
+            <input type="checkbox" id="chk-4" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">5. 技能 ① 會議行動矩陣提取測試成功</div>
+              <div class="check-item-desc">輸入雜亂會議口述，成功產出 6 大部門行動表格。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(5)">
+            <input type="checkbox" id="chk-5" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">6. 技能 ② 華邑酒店籌備里程碑測試成功</div>
+              <div class="check-item-desc">輸入工務延誤資訊，成功警示關鍵路徑與高管裁決事項。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(6)">
+            <input type="checkbox" id="chk-6" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">7. 晨報 (08:00) 與晚報 (22:30) Cron 設定完成</div>
+              <div class="check-item-desc">排程任務註冊成功，確認能定時自動觸發。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(7)">
+            <input type="checkbox" id="chk-7" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">8. Obsidian Vault 建立並同步至 Google 雲端硬碟</div>
+              <div class="check-item-desc">筆記庫儲存於 Google Drive 目錄，本機自動雙向同步。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(8)">
+            <input type="checkbox" id="chk-8" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">9. 手機端 Google Drive / Obsidian 檢視測試</div>
+              <div class="check-item-desc">鶴仁在手機上能即時讀取剛才在筆電上生成的筆記。</div>
+            </div>
+          </div>
+
+          <div class="check-item" onclick="toggleCheck(9)">
+            <input type="checkbox" id="chk-9" onchange="updateProgress()">
+            <div class="check-item-text">
+              <div class="check-item-title">10. 掌握解耦概念與搬遷備份原理</div>
+              <div class="check-item-desc">理解「資料存 Markdown、大腦隨時可換」的架構優勢。</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+          <button class="btn btn-secondary" onclick="resetChecklist()" style="font-size: 0.85rem;">🔄 重設勾選狀態</button>
+          <button class="btn btn-emerald" onclick="checkAllList()" style="font-size: 0.85rem;">✅ 全部勾選（完成）</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Full Material Package Explorer -->
+  <section id="materials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">MATERIAL REPOSITORY</span>
+        <h2 class="section-title">教學素材包原始檔案清單</h2>
+        <p class="section-desc">素材包內 9 份標準化檔案，點擊即可快速檢視或複製。</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">00_README.md</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">素材包說明與山姆大叔架構方針初始構想。</p>
+          <button class="copy-btn" onclick="copyRawFile('00_README')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">01_SOUL.md</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">鶴仁專屬飯店營運特助角色設定完整全文。</p>
+          <button class="copy-btn" onclick="copyRawFile('01_SOUL')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">02_meeting_action_extractor</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">會議速記 ➔ 6 大部門行動矩陣 YAML。</p>
+          <button class="copy-btn" onclick="copyRawFile('02_meeting')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">03_hotel_milestone_tracker</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">華邑酒店籌備里程碑與關鍵路徑追蹤 YAML。</p>
+          <button class="copy-btn" onclick="copyRawFile('03_hotel')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">04_morning_briefing_tracker</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">晨間營運摘要定時 Skill（08:00 Cron）。</p>
+          <button class="copy-btn" onclick="copyRawFile('04_morning')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">05_evening_settlement_tracker</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">晚間營運結算定時 Skill（22:30 Cron）。</p>
+          <button class="copy-btn" onclick="copyRawFile('05_evening')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">06_安裝步驟一頁紙.md</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Hermes + Obsidian + Google Drive 安裝指南。</p>
+          <button class="copy-btn" onclick="copyRawFile('06_install')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">07_現場教學流程.md</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">3 小時流程表、示範腳本與攜帶清單。</p>
+          <button class="copy-btn" onclick="copyRawFile('07_schedule')">複製檔案內容</button>
+        </div>
+        <div class="card">
+          <h4 style="color: var(--accent-cyan); margin-bottom: 6px;">08_Google日曆匯入.md</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">Google Calendar 行事曆連結與 .ics 說明。</p>
+          <button class="copy-btn" onclick="copyRawFile('08_calendar')">複製檔案內容</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 8px;">
+        <strong>Hermes Agent 現場導入教學手冊</strong> ｜ 2026-08-19 Block & Cafe 現場教學專用
+      </p>
+      <p style="color: var(--text-muted); font-size: 0.78rem;">
+        架構設計：山姆大叔 × Gemini ｜ 學員：陳鶴仁 ｜ 技術棧：Hermes Agent ＋ Obsidian ＋ Google Drive
+      </p>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Bar -->
+  <div class="mobile-bottom-bar">
+    <a href="#event" class="mobile-bar-btn">
+      <span>📍</span>
+      <span>資訊</span>
+    </a>
+    <a href="#steps" class="mobile-bar-btn">
+      <span>🚀</span>
+      <span>步驟</span>
+    </a>
+    <a href="#soul" class="mobile-bar-btn">
+      <span>🤖</span>
+      <span>SOUL</span>
+    </a>
+    <a href="#skills" class="mobile-bar-btn">
+      <span>⚡</span>
+      <span>Skills</span>
+    </a>
+    <a href="#checklist" class="mobile-bar-btn">
+      <span>✅</span>
+      <span>驗收</span>
+    </a>
+  </div>
+
+  <!-- Raw Files Data Store -->
+  <script>
+    const rawFilesData = {"00_README.md": "﻿# 鶴仁導入教學素材包（2026-08-19 現場用）\n\n> 緣起：山姆大叔與 Gemini 討論後，選定 **Hermes Agent** 作為好友鶴仁（飯店業管理職）的數位營運特助。\n> 本素材包為 8/19（三）19:00–22:00 Block & Cafe 現場教學所用。\n\n## 素材清單\n\n| 檔名 | 用途 |\n|---|---|\n| `01_SOUL.md` | 鶴仁版角色設定（飯店營運特助）— 匯入 Hermes 即生效 |\n| `02_meeting_action_extractor.yaml` | Skill：會議速記 → 行動矩陣 |\n| `03_hotel_milestone_tracker.yaml` | Skill：華邑酒店籌備里程碑追蹤 |\n| `04_morning_briefing_tracker.md` | 定時 Skill：晨間營運摘要（含 Cron JSON，08:00） |\n| `05_evening_settlement_tracker.md` | 定時 Skill：晚間營運結算（含 Cron JSON，22:30） |\n| `06_安裝步驟一頁紙.md` | 安裝 Hermes＋Obsidian＋Google 雲端磁碟 6 步驟 |\n| `07_現場教學流程.md` | 3 小時流程＋示範腳本＋攜帶清單 |\n| `08_Google日曆匯入.md` | 明晚場次一鍵匯入行事曆 |\n\n## 架構方針（山姆大叔初始構想）\n- Hermes Agent 安裝在鶴仁**筆電**\n- **Obsidian** 當第二大腦（vault 放 Google 雲端磁碟同步）\n- 資料與設定分層 → **隨時可搬遷**、可換不同 AI Agent\n\n## 原始筆記\n`Obsidian/00_Inbox/20260817｜陳鶴仁｜Hermes Agent 飯店營運導入規劃.md`\n", "01_SOUL.md": "﻿# 核心身份 (Identity)\n你是「星級飯店營運與新案籌備高階特助」，專屬服務於飯店管理者陳鶴仁（鶴仁）。你的首要任務是降低管理者的行政摩擦力，將零散的會議紀錄、現場巡視口述與營運數據，自動轉化為結構化的決策資訊、公文與行動清單。\n\n# 核心目標 (Core Objectives)\n1. **資訊降噪與公文結構化：** 將口語化的輸入快速轉譯為符合集團規範的「主管呈報」或「跨部門正式文件」。\n2. **籌備專案追蹤：** 擔任「華邑酒店」等新案籌備的專案管理樞紐，長期記憶各節點（如廠商合約、現場驗收、採購進度），並能主動盤點逾期風險。\n3. **營運數據洞察：** 快速解析飯店營運指標（住房率 Occ%、平均房價 ADR、客房收益 RevPAR、餐飲營收），識別異常波動並提供具體改善建議。\n4. **會議行動轉化：** 從雜亂的討論中提煉結論，並拆解為「部門／負責人／期限」的清晰行動矩陣。\n\n# 行為準則 (Behavioral Guidelines)\n- **極簡高效：** 省去所有客套話、問候與前言，第一句話直接給出核心結論或最終產出物。\n- **產業語境：** 熟練使用飯店業標準術語，並具備前檯、房務、餐飲與工務跨部門協調的實務邏輯。\n- **排版優化：** 考量管理者常透過手機（通訊軟體）閱讀，必須大量使用 Markdown 清單與表格，確保資訊高度可掃描（Scannable）。\n- **主動釐清：** 若鶴仁交辦的任務缺乏關鍵資訊（如：會議負責人未定、籌備時間線缺失），請直接列出 1-3 個簡短的問題向他確認，嚴禁自行捏造事實。\n\n# 預設工作流模式 (Default Workflows)\n偵測到以下任務意圖時，請自動切換對應輸出框架：\n- **[主管回報模式]：** 輸出「背景與現況 -> 核心問題 -> 建議方案 (含 A/B 兩案對比) -> 預期效益與資源需求」。\n- **[會議管理模式]：** 輸出「決策摘要 -> 跨部門待辦清單 (Table 呈現：事項 / 負責部門 / 壓線日期) -> 潛在風險」。\n- **[籌備專案模式]：** 提取歷史對話中的「華邑酒店」進度，對比當前任務，輸出「進度更新 -> 延遲警示 -> 需高管裁決事項」。\n- **[數據決策模式]：** 針對提供的數據，輸出「核心洞察 -> 異常紅燈指標 -> 現場營運微調建議」。\n\n# 輸出限制 (Output Constraints)\n- 全程使用繁體中文。\n- 拒絕輸出「希望這對您有幫助」、「總結來說」等廢話結尾。產出完畢即停止。\n", "02_meeting_action_extractor.yaml": "﻿name: meeting_action_extractor\ndescription: 將口語化或零散的飯店會議筆記，結構化解析為決策摘要、跨部門行動矩陣（Table）及高風險警示。\ntriggers:\n  - 會議記錄\n  - 早會整理\n  - 跨部門協調\n  - 交辦事項\ninputs:\n  raw_text:\n    type: string\n    description: 原始會議速記、口述摘要或語音轉文字內容。\n    required: true\n\nworkflow:\n  1. 資訊過濾：剔除閒聊與重複資訊，擷取核心決策點。\n  2. 責任歸屬拆解：將待辦事項對齊到標準飯店部門（前檯 Front Office / 房務 Housekeeping / 餐飲 F&B / 工務 Engineering / 財務 Finance / 業務 Sales）。\n  3. 時間線與風險評估：標註具體截止日期；若未提供具體時間，標記為「待確認」並列入追蹤。\n  4. 格式化輸出：產生決策重點與標準 Markdown 表格。\n\noutput_template: |\n  **📋 會議決策核心**\n  * [列出 1-3 點核心決策]\n\n  **🎯 跨部門行動矩陣**\n  | 事項編號 | 交辦事項 / 任務內容 | 負責部門 | 主責人員 | 完成期限 | 優先級 |\n  | :--- | :--- | :--- | :--- | :--- | :--- |\n  | 1 | [任務簡述] | [部門] | [姓名/職稱] | [YYYY-MM-DD] | 高/中/低 |\n\n  **⚠️ 潛在風險與待確認事項**\n  * [列出資訊不明確或跨部門卡點項目]\n", "03_hotel_milestone_tracker.yaml": "﻿name: hotel_milestone_tracker\ndescription: 追蹤新飯店籌備期的工程進度、硬體驗收、物料採購與廠商合約節點，輸出進度報告並警示延誤風險。\ntriggers:\n  - 籌備進度\n  - 華邑酒店進度\n  - 工程驗收\n  - 採購追蹤\ninputs:\n  project_name:\n    type: string\n    description: 專案名稱（預設：華邑酒店籌備專案）。\n    default: \"華邑酒店籌備專案\"\n  update_notes:\n    type: string\n    description: 最新現場巡查紀錄、廠商反饋或進度更新。\n    required: true\n\nworkflow:\n  1. 里程碑分類：將更新歸類至四大模組（1. 現場硬體/工務驗收 2. 營運物料採購 3. 證照與法規驗收 4. 人員培訓與試營運）。\n  2. 延誤與瓶頸識別：比對關鍵路徑（Critical Path），偵測是否會影響預定開幕/試營運日期。\n  3. 行動建議產出：針對卡點提供 1-2 個替代方案或需向上層呈報裁決的具體事項。\n\noutput_template: |\n  **🏨 【{{project_name}}】籌備進度看板**\n  * **當前狀態評估：** [正常推進 / 輕度延遲 / 嚴重卡點]\n  * **本期完成節點：** [列出已完成事項]\n\n  **🚧 關鍵路徑追蹤表**\n  | 籌備模組 | 當前關鍵任務 | 廠商/負責窗口 | 預定驗收日 | 狀態 | 風險評估 |\n  | :--- | :--- | :--- | :--- | :--- | :--- |\n  | 工務驗收 | [如：大廳地毯樣式確認] | [廠商/工務] | [YYYY-MM-DD] | 進行中 | [影響試營運/低] |\n\n  **🚨 需高管裁決事項 (Action Required)**\n  * [列出需鶴仁或總經理拍板的決策點]\n", "04_morning_briefing_tracker.md": "﻿# 定時 Skill：晨間營運摘要（morning-briefing-tracker）\n\n- **觸發**：Cron 每日 08:00｜手動關鍵詞：`晨報、今日早報、晨會準備、早安簡報`\n- **聚合**：未結案行動清單（今日到期/逾期）＋華邑籌備當週驗收節點＋昨日營運數據（Occ%/ADR/RevPAR）＋早會需高管確認事項\n- **Cron 配置**：\n\n```json\n{\n  \"name\": \"Daily Hotel Morning Briefing\",\n  \"schedule\": \"0 8 * * *\",\n  \"timezone\": \"Asia/Taipei\",\n  \"skill\": \"morning-briefing-tracker\",\n  \"prompt\": \"請整合今日日期、當前所有未結案跨部門待辦及華邑酒店籌備最新進度，產出今日晨間營運摘要與重點提醒推播。\"\n}\n```\n\n- **輸出模板**：☀️ 晨間營運與籌備簡報 → 🔥 Top Priorities（P0 卡點 1-2 項）→ 🏨 華邑關鍵節點＋風險警示 → 📋 跨部門待追蹤清單（表格）→ 💡 早會提示\n\n---\n", "05_evening_settlement_tracker.md": "﻿# 定時 Skill：晚間營運結算（evening-settlement-tracker）\n\n- **觸發**：Cron 每日 22:30 或 23:00（夜審前／值班經理交班）｜手動關鍵詞：`晚報、今日營收、夜班交接、晚間結算`\n- **聚合四維度**：當日核心營收（Occ%/ADR/RevPAR＋餐飲宴會）＋現場異常與重大客訴（免單/升等補償、設施故障）＋夜間交班巡檢（遲到 VIP、MOD 注意事項）＋明日營運預警（預估住房率、大團進出、人力佈署）\n- **Cron 配置**：\n\n```json\n{\n  \"name\": \"Daily Hotel Evening Settlement\",\n  \"schedule\": \"30 22 * * *\",\n  \"timezone\": \"Asia/Taipei\",\n  \"skill\": \"evening-settlement-tracker\",\n  \"prompt\": \"請整合今日各部門回報之營運數據（住房率、ADR、RevPAR、餐飲營收）、客訴與現場異常紀錄，產出晚間營運結算與夜班交班簡報。\"\n}\n```\n\n- **輸出模板**：🌙 晚間營運結算與交班簡報 → 📊 當日核心營收指標（對比預算標註超標/落後）→ ⚠️ 現場異常與客訴 → 🛎️ 夜班交班要點（VIP/巡檢）→ 🔮 明日營運預警\n\n> 晨間＋晚間形成完整閉環：早上主動準備決策視角，晚間結算當日績效與風險，搭配會議速記與籌備追蹤技能全面解放行政負擔。\n\n---\n", "06_安裝步驟一頁紙.md": "﻿# Hermes Agent 安裝步驟一頁紙（Windows 筆電）\n\n> 現場教學用｜時間約 20–30 分鐘｜對象：鶴仁的筆電\n\n## 前置需求\n- Windows 10/11 筆電（需管理員權限）\n- 安裝 **git-bash**（Git for Windows 內建）— https://git-scm.com/download/win\n- 一個 LLM API Key（現場由山姆大叔提供 OpenCode / DeepSeek / OpenRouter 擇一即可）\n\n## Step 1：安裝 Hermes Agent（git-bash 內執行）\n```bash\ncurl -fsSL https://hermes-agent.nousresearch.com/install.sh | bash\n```\n> 安裝程式會自動處理 uv、Python、虛擬環境與啟動器。完成後重新開啟 git-bash。\n\n## Step 2：初次設定\n```bash\nhermes setup        # 設定模型與供應商（選 API provider 並貼 Key）\nhermes              # 啟動互動對話（首次會引導）\n```\n- `hermes model`：之後隨時切換模型\n- `hermes doctor`：健康檢查（確認安裝沒問題）\n\n## Step 3：放入角色設定（SOUL.md）\n- 把素材包內的 `01_SOUL.md` 內容存入專案資料夾的 `AGENTS.md`（或依現場版本設定導入方式）\n- 作用：讓 Hermes 預設以「星級飯店營運特助」身份回應鶴仁\n\n## Step 4：放入 Skills（4 個）\n- 把 `02`〜`05` 的 skill 檔放進 Hermes skills 目錄：\n  - 本機：`~/.hermes/skills/`（或 Desktop 版本依實際路徑）\n- 存放後 Hermes 即可自動偵測、觸發使用\n\n## Step 5：定時任務（Cron）\n- 依 `04`、`05` 內附的 JSON 建立每日 08:00 晨間簡報、22:30 晚間結算（現場示範）\n\n## Step 6：Obsidian 第二大腦（Google 雲端磁碟同步）\n1. 安裝 Obsidian：https://obsidian.md/download\n2. 建立 vault 資料夾，放在 Google 雲端磁碟同步資料夾內（如 `G:/我的雲端硬碟/Obsidian/`）\n3. Obsidian 設定 → 關閉 vault 內自動保留設定，直接以檔案夾同步方式運作\n4. 從此筆記、日誌、知識庫都存 vault → Google Drive 自動同步 → 手機/換機皆可取用\n\n## 驗收清單（全部打勾＝安裝成功）\n- [ ] `hermes` 可啟動且能正常對話\n- [ ] 角色設定（SOUL）生效——問「你是誰」會回飯店特助身份\n- [ ] 任一 skill 可被觸發（如貼一段會議筆記 → 產出行動矩陣）\n- [ ] Obsidian vault 已同步 Google 雲端磁碟（手機 App 看得到）\n", "07_現場教學流程.md": "﻿# AI 現場教學流程（2026-08-19 19:00–22:00 @ Block & Cafe）\n\n> 太原路50號2樓（前身町咖啡）｜對象：鶴仁｜助教：山姆大叔\n\n## 時間配置（3 小時）\n\n| 時間 | 單元 | 內容 | 素材 |\n|---|---|---|---|\n| 19:00–19:15 | 開場 | 說明 Hermes Agent 能幫鶴仁做什麼（對照他現有十幾個 ChatGPT 對話串） | 本包 README |\n| 19:15–20:15 | 實作① | 筆電安裝 Hermes Agent＋模型路由設定 | 06_安裝步驟一頁紙 |\n| 20:15–21:15 | 實作② | Obsidian vault 建立＋Google 雲端磁碟同步 | 06_安裝步驟一頁紙 Step 6 |\n| 21:15–22:00 | 實作③＋收尾 | 匯入 SOUL.md＋4 個 skill＋示範 Cron；Q&A | 01–05 素材檔 |\n| — | 會後 | 手機綁定（Telegram/通訊端）、雲端搬遷選項說明 | — |\n\n## 現場示範腳本（實作③）\n1. 貼上 `01_SOUL.md` → 問「你是誰」驗證身份生效\n2. 貼一段範例會議筆記 → 觸發 `02_meeting_action_extractor` → 產出行動矩陣\n3. 丟一條「3 樓客房天花板驗收沒過，廠商延後 5 天交場」→ 觸發 `03_hotel_milestone_tracker`\n4. 設定 Cron（04/05 JSON）→ 說明明早 08:00 會自動推播晨間簡報\n\n## 攜帶清單（山姆大叔）\n- [ ] 筆電＋充電器（鶴仁的）\n- [ ] 本教學素材包（已放 Google 雲端硬碟，手機可存取）\n- [ ] LLM API Key（OpenCode 或既有 provider）\n- [ ] 網路：Block & Cafe 有 Wi-Fi（筆記已確認）\n", "08_Google日曆匯入.md": "﻿# Google 日曆事件匯入\n\n## 事件資訊\n- **標題**：AI 現場教學（鶴仁導入 Hermes Agent）\n- **時間**：2026-08-19（三）19:00–22:00（Asia/Taipei）\n- **地點**：Block & Cafe，台北市太原路50號2樓（前身町咖啡）\n- **提醒**：提前 2 小時\n\n## 一鍵匯入連結（手機/電腦點開 → 按儲存）\nhttps://calendar.google.com/calendar/render?action=TEMPLATE&text=AI%20%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%88%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%EF%BC%89&dates=20260819T110000Z%2F20260819T140000Z&details=%E9%80%99%E6%98%AF%E5%B9%AB%E5%8F%8B%E4%BA%BA%E9%B6%B4%E4%BB%81%E5%B0%8E%E5%85%A5%20Hermes%20Agent%20%E7%9A%84%E7%8F%BE%E5%A0%B4%E6%95%99%E5%AD%B8%EF%BC%8C%E4%B8%BB%E9%A1%8C%E5%90%AB%E5%AE%89%E8%A3%9D%20Hermes%20Agent%E3%80%81Obsidian%20%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%85%A6%E3%80%81Google%20%E9%9B%B2%E7%AB%AF%E7%A3%81%E7%A2%9F%E5%90%8C%E6%AD%A5%E3%80%82&location=Block%20%26%20Cafe%EF%BC%8C%E5%8F%B0%E5%8C%97%E5%B8%82%E5%A4%AA%E5%8E%9F%E8%B7%AF50%E8%99%9F2%E6%A8%93%EF%BC%88%E5%89%8D%E8%BA%AB%E7%94%BA%E5%92%96%E5%95%A1%EF%BC%89&ctz=Asia%2FTaipei\n\n## .ics 檔\n`Obsidian/00_Inbox/AI_現場教學_鶴仁導入_Hermes_Agent.ics`（已內建提前 2 小時提醒）\n"};
+
+    // Copy helper
+    function copyCode(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "✓ 已複製！";
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.classList.remove("copied");
+        }, 2000);
+      });
+    }
+
+    function copySoulFull() {
+      const text = rawFilesData["01_SOUL.md"];
+      navigator.clipboard.writeText(text).then(() => {
+        alert("已成功複製 01_SOUL.md 角色設定全文！");
+      });
+    }
+
+    function copyRawFile(key) {
+      let mapKey = "";
+      if (key === '00_README') mapKey = '00_README.md';
+      else if (key === '01_SOUL') mapKey = '01_SOUL.md';
+      else if (key === '02_meeting') mapKey = '02_meeting_action_extractor.yaml';
+      else if (key === '03_hotel') mapKey = '03_hotel_milestone_tracker.yaml';
+      else if (key === '04_morning') mapKey = '04_morning_briefing_tracker.md';
+      else if (key === '05_evening') mapKey = '05_evening_settlement_tracker.md';
+      else if (key === '06_install') mapKey = '06_安裝步驟一頁紙.md';
+      else if (key === '07_schedule') mapKey = '07_現場教學流程.md';
+      else if (key === '08_calendar') mapKey = '08_Google日曆匯入.md';
+
+      if (mapKey && rawFilesData[mapKey]) {
+        navigator.clipboard.writeText(rawFilesData[mapKey]).then(() => {
+          alert(`已複製 ${mapKey} 內容！`);
+        });
+      }
+    }
+
+    // Tab switcher
+    function switchSkillTab(idx) {
+      const btns = document.querySelectorAll(".tab-btn");
+      const contents = document.querySelectorAll(".tab-content");
+      btns.forEach((b, i) => {
+        if (i === idx) b.classList.add("active");
+        else b.classList.remove("active");
+      });
+      contents.forEach((c, i) => {
+        if (i === idx) c.classList.add("active");
+        else c.classList.remove("active");
+      });
+    }
+
+    // Checklist logic with localStorage
+    const totalChecks = 10;
+
+    function toggleCheck(idx) {
+      const chk = document.getElementById("chk-" + idx);
+      chk.checked = !chk.checked;
+      updateProgress();
+    }
+
+    function updateProgress() {
+      let checkedCount = 0;
+      const state = [];
+      for (let i = 0; i < totalChecks; i++) {
+        const chk = document.getElementById("chk-" + i);
+        const parent = chk.closest(".check-item");
+        if (chk.checked) {
+          checkedCount++;
+          parent.classList.add("completed");
+          state.push(true);
+        } else {
+          parent.classList.remove("completed");
+          state.push(false);
+        }
+      }
+
+      const pct = Math.round((checkedCount / totalChecks) * 100);
+      document.getElementById("progress-pct").innerText = pct + "% (" + checkedCount + "/" + totalChecks + ")";
+      document.getElementById("progress-bar-fill").style.width = pct + "%";
+      document.getElementById("nav-check-badge").innerText = checkedCount + "/" + totalChecks;
+
+      localStorage.setItem("hermes_teaching_checklist", JSON.stringify(state));
+    }
+
+    function resetChecklist() {
+      if (confirm("確定要重設所有驗收勾選狀態嗎？")) {
+        for (let i = 0; i < totalChecks; i++) {
+          document.getElementById("chk-" + i).checked = false;
+        }
+        updateProgress();
+      }
+    }
+
+    function checkAllList() {
+      for (let i = 0; i < totalChecks; i++) {
+        document.getElementById("chk-" + i).checked = true;
+      }
+      updateProgress();
+    }
+
+    // Load saved checklist state
+    window.addEventListener("DOMContentLoaded", () => {
+      const saved = localStorage.getItem("hermes_teaching_checklist");
+      if (saved) {
+        try {
+          const state = JSON.parse(saved);
+          state.forEach((val, i) => {
+            const el = document.getElementById("chk-" + i);
+            if (el) el.checked = !!val;
+          });
+        } catch (e) {}
+      }
+      updateProgress();
+    });
+
+    function toggleMobileMenu() {
+      const navLinks = document.querySelector(".nav-links");
+      if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+      } else {
+        navLinks.style.display = "flex";
+        navLinks.style.flexDirection = "column";
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "68px";
+        navLinks.style.left = "0";
+        navLinks.style.right = "0";
+        navLinks.style.background = "#0e1424";
+        navLinks.style.padding = "20px";
+        navLinks.style.borderBottom = "1px solid rgba(255,255,255,0.1)";
+      }
+    }
+  </script>
+</body>
+</html>
